@@ -9,11 +9,11 @@ import static sun.plugin.AppletViewer.setStartTime;
  * @version 1.0
  */
 public class Menu {
-    static void requestStartTimeFromUser(WageCalculator wageCalculator) {
+    static Integer requestTimeFromUser(String prompt) {
         Scanner scnr = new Scanner(System.in);
         String userInputTime;
 
-        System.out.print("What time did you start?\n>: ");
+        System.out.print(prompt);
         userInputTime = scnr.nextLine();
 
         while(!(Validator.isWholeNumber(userInputTime))
@@ -22,6 +22,6 @@ public class Menu {
             userInputTime = scnr.nextLine();
         }
 
-        wageCalculator.setStartTime(Integer.parseInt(userInputTime));
+        return Integer.parseInt(userInputTime);
     }
 }

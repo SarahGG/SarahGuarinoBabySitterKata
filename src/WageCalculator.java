@@ -17,12 +17,14 @@ class WageCalculator {
 
     void setStartTime(Integer startTime) {
         this.startTime = startTime;
-        System.out.println("startTime has been set to " + startTime);
+        System.out.println("TEST: setStartTime WageCalculatorTest.java Line 18\n"
+                + "startTime has been set to " + startTime);
     }
 
     void setEndTime(Integer endTime) {
         this.endTime = endTime;
-//        System.out.println("endTime has been set to " + endTime);
+        System.out.println("TEST: setEndTime WageCalculatorTest.java Line 24\n"
+                + "endTime has been set to " + endTime);
     }
 
     Integer getStartTime() {
