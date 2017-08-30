@@ -9,8 +9,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scnr = new Scanner(System.in);
+        boolean timeIsCorrect = false;
+        String userInputTime;
 
         System.out.print("What time did you start?\n>: ");
-        System.out.println(scnr.nextLine());
+        userInputTime = scnr.nextLine();
+
+        while(!(WageCalculatorValidator.isWholeNumber(userInputTime))) {
+            System.out.print("Please enter a whole number only.\n>: ");
+            userInputTime = scnr.nextLine();
+        }
     }
 }
