@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Main class for Sarah's daily babysitting wage calculator.
  *
@@ -6,6 +8,9 @@
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Scanner scnr = new Scanner(System.in);
+
+        System.out.print("What time did you start?\n>: ");
+        System.out.println(scnr.nextLine());
     }
 }
