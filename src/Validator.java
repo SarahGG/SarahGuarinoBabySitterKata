@@ -18,4 +18,9 @@ class Validator {
     static boolean isWithinTimeRange(Integer inputToEvaluate) {
         return((1 <= inputToEvaluate) && (inputToEvaluate <= 12));
     }
+
+    static boolean rangeIsInOrder(Integer startTime, Integer endTime) {
+        Integer totalHoursWorked = endTime - startTime;
+        return (totalHoursWorked >= 0);
+    }
 }

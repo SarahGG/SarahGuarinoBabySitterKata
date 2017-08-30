@@ -28,13 +28,13 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void startTimeIsInitializedToInput() {
+    public void startTimeIsInitializedToFive() {
         wageCalculator.setStartTime(5);
         assertEquals("5", wageCalculator.getStartTime().toString());
     }
 
     @Test
-    public void endTimeIsInitializedToInput() {
+    public void endTimeIsInitializedToFive() {
         wageCalculator.setEndTime(5);
         assertEquals("5", wageCalculator.getEndTime().toString());
     }
@@ -48,15 +48,32 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void inputIsWithinTimeRange() {
+    public void inputIsWithinOneToTwelveTimeRange() {
         assertEquals(false, Validator.isWithinTimeRange(-7));
         assertEquals(false, Validator.isWithinTimeRange(0));
         assertEquals(true, Validator.isWithinTimeRange(6));
     }
 
     @Test
-    public void afterMidnightTimeIncrementsHourByTwelve() {
+    public void ThreeAMReturnsFifteen() {
         wageCalculator.setStartTime(3);
         assertEquals("15", wageCalculator.getStartTime().toString());
+    }
+
+    @Test
+    public void workingFiveToMidNightReturnsSeven() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setEndTime(12);
+        assertEquals("7", wageCalculator.getTotalHoursWorked().toString());
+    }
+
+    @Test
+    public void workingNineToFiveReturnsFalse() {
+        assertEquals(false, Validator.rangeIsInOrder(9, 5));
+    }
+
+    @Test
+    public void workingFiveToNineReturnsTrue() {
+        assertEquals(true, Validator.rangeIsInOrder(5, 9));
     }
 }

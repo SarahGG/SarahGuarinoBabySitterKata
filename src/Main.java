@@ -9,11 +9,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         WageCalculator wageCalculator = new WageCalculator();
-        Integer usersTimeInput;
+        Integer startTime;
+        Integer endTime;
 
-        usersTimeInput = Menu.requestTimeFromUser("What time did you start?\n>: ");
-        wageCalculator.setStartTime(usersTimeInput);
-        usersTimeInput = Menu.requestTimeFromUser("What time did you leave?\n>: ");
-        wageCalculator.setEndTime(usersTimeInput);
+        startTime = Menu.requestTimeFromUser("What time did you start?\n>: ");
+        wageCalculator.setStartTime(startTime);
+        endTime = Menu.requestTimeFromUser("What time did you leave?\n>: ");
+        wageCalculator.setEndTime(endTime);
     }
 }

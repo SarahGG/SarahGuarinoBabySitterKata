@@ -40,4 +40,8 @@ class WageCalculator {
     Integer getEndTime() {
         return this.endTime;
     }
+
+    Integer getTotalHoursWorked() {
+        return (this.endTime - this.startTime);
+    }
 }
