@@ -13,11 +13,15 @@ public class WageCalculator {
         endTime = 0;
     }
 
-    public String getStartTime() {
-        return this.startTime.toString();
+    public void setStartTime(Integer startTime) {
+        this.startTime = startTime;
     }
 
-    public String getEndTime() {
-        return this.endTime.toString();
+    public Integer getStartTime() {
+        return this.startTime;
+    }
+
+    public Integer getEndTime() {
+        return this.endTime;
     }
 }
