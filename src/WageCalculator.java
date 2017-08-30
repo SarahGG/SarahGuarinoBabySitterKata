@@ -4,30 +4,30 @@
  * @author Sarah Guarino
  * @version 1.0
  */
-public class WageCalculator {
+class WageCalculator {
     private Integer startTime;
     private Integer endTime;
 
-    public WageCalculator() {
+    WageCalculator() {
         startTime = 0;
         endTime = 0;
     }
 
-    public void setStartTime(Integer startTime) {
+    void setStartTime(Integer startTime) {
         this.startTime = startTime;
 //        System.out.println("startTime has been set to " + startTime);
     }
 
-    public void setEndTime(Integer endTime) {
+    void setEndTime(Integer endTime) {
         this.endTime = endTime;
 //        System.out.println("endTime has been set to " + endTime);
     }
 
-    public Integer getStartTime() {
+    Integer getStartTime() {
         return this.startTime;
     }
 
-    public Integer getEndTime() {
+    Integer getEndTime() {
         return this.endTime;
     }
 }
