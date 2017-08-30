@@ -1,8 +1,6 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Scanner;
-
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -12,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * @version 1.0
  */
 public class WageCalculatorTest {
-    WageCalculator wageCalculator;
+    private WageCalculator wageCalculator;
     @Before
     public void setUp() {
         wageCalculator = new WageCalculator();
@@ -30,9 +28,7 @@ public class WageCalculatorTest {
 
     @Test
     public void startTimeIsInitializedToInput() {
-        Scanner scnr = new Scanner(System.in);
         wageCalculator.setStartTime(5);
         assertEquals("5", wageCalculator.getStartTime().toString());
     }
-
 }
