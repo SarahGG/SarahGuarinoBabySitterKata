@@ -11,9 +11,12 @@ import static org.junit.Assert.assertEquals;
  */
 public class WageCalculatorTest {
     private WageCalculator wageCalculator;
+    private WageCalculatorValidator validator;
+
     @Before
     public void setUp() {
         wageCalculator = new WageCalculator();
+        validator = new WageCalculatorValidator();
     }
 
     @Test
@@ -39,10 +42,17 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void inputIsValidatedAsAWholeNumber() {
-        assertEquals(false, WageCalculatorValidator.isWholeNumber("this"));
-        assertEquals(false, WageCalculatorValidator.isWholeNumber("5.6"));
-        assertEquals(true, WageCalculatorValidator.isWholeNumber("-7"));
-        assertEquals(true, WageCalculatorValidator.isWholeNumber("12"));
+    public void inputIsAWholeNumber() {
+        assertEquals(false, validator.isWholeNumber("this"));
+        assertEquals(false, validator.isWholeNumber("5.6"));
+        assertEquals(true, validator.isWholeNumber("-7"));
+        assertEquals(true, validator.isWholeNumber("12"));
+    }
+
+    @Test
+    public void inputIsWithinTimeRange() {
+        assertEquals(false, validator.isWithinTimeRange(-7));
+        assertEquals(false, validator.isWithinTimeRange(0));
+        assertEquals(true, validator.isWithinTimeRange(6));
     }
 }

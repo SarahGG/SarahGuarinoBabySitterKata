@@ -13,6 +13,13 @@ public class WageCalculatorValidator {
         } catch (NumberFormatException notAnInteger) {
             return false;
         }
+    }
 
+    public static boolean isWithinTimeRange(Integer inputToEvaluate) {
+        if((1 <= inputToEvaluate) && (inputToEvaluate <= 12)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
