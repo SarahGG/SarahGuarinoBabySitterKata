@@ -17,6 +17,10 @@ public class WageCalculator {
         this.startTime = startTime;
     }
 
+    public void setEndTime(Integer endTime) {
+        this.endTime = endTime;
+    }
+
     public Integer getStartTime() {
         return this.startTime;
     }

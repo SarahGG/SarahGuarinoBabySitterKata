@@ -31,4 +31,10 @@ public class WageCalculatorTest {
         wageCalculator.setStartTime(5);
         assertEquals("5", wageCalculator.getStartTime().toString());
     }
+
+    @Test
+    public void endTimeIsInitializedToInput() {
+        wageCalculator.setEndTime(5);
+        assertEquals("5", wageCalculator.getEndTime().toString());
+    }
 }
