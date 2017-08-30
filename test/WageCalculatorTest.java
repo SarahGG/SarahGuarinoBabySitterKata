@@ -53,4 +53,10 @@ public class WageCalculatorTest {
         assertEquals(false, Validator.isWithinTimeRange(0));
         assertEquals(true, Validator.isWithinTimeRange(6));
     }
+
+    @Test
+    public void afterMidnightTimeIncrementsHourByTwelve() {
+        wageCalculator.setStartTime(3);
+        assertEquals("15", wageCalculator.getStartTime().toString());
+    }
 }

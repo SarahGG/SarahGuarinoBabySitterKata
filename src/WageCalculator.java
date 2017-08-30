@@ -16,15 +16,21 @@ class WageCalculator {
     }
 
     void setStartTime(Integer startTime) {
+        // makes anything after midnight it's hour value plus 12.
+        // Think military time where noon is 0 instead of 12.
+        if((1 <= startTime) && (startTime <= 4)) {
+            startTime += 12;
+        }
+
         this.startTime = startTime;
-        System.out.println("TEST: setStartTime WageCalculatorTest.java Line 18\n"
-                + "startTime has been set to " + startTime);
+//        System.out.println("TEST: setStartTime WageCalculatorTest.java Line 18\n"
+//                + "startTime has been set to " + startTime);
     }
 
     void setEndTime(Integer endTime) {
         this.endTime = endTime;
-        System.out.println("TEST: setEndTime WageCalculatorTest.java Line 24\n"
-                + "endTime has been set to " + endTime);
+//        System.out.println("TEST: setEndTime WageCalculatorTest.java Line 24\n"
+//                + "endTime has been set to " + endTime);
     }
 
     Integer getStartTime() {
