@@ -37,4 +37,12 @@ public class WageCalculatorTest {
         wageCalculator.setEndTime(5);
         assertEquals("5", wageCalculator.getEndTime().toString());
     }
+
+    @Test
+    public void inputIsValidatedAsAWholeNumber() {
+        assertEquals(false, WageCalculatorValidator.isWholeNumber("this"));
+        assertEquals(false, WageCalculatorValidator.isWholeNumber("5.6"));
+        assertEquals(true, WageCalculatorValidator.isWholeNumber("-7"));
+        assertEquals(true, WageCalculatorValidator.isWholeNumber("12"));
+    }
 }
