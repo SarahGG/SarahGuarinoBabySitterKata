@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Sarah's daily baby sitting wage calculator.
  *
@@ -15,7 +17,7 @@ class WageCalculator {
 
     void setStartTime(Integer startTime) {
         this.startTime = startTime;
-//        System.out.println("startTime has been set to " + startTime);
+        System.out.println("startTime has been set to " + startTime);
     }
 
     void setEndTime(Integer endTime) {

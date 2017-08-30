@@ -8,16 +8,8 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        Scanner scnr = new Scanner(System.in);
-        String userInputTime;
+        WageCalculator wageCalculator = new WageCalculator();
 
-        System.out.print("What time did you start?\n>: ");
-        userInputTime = scnr.nextLine();
-
-        while(!(Validator.isWholeNumber(userInputTime))
-                || !(Validator.isWithinTimeRange(Integer.parseInt(userInputTime)))) {
-            System.out.print("Please enter a whole number between 1 and 12 only.\n>: ");
-            userInputTime = scnr.nextLine();
-        }
+        Menu.requestStartTimeFromUser(wageCalculator);
     }
 }
