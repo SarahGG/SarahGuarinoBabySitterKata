@@ -18,7 +18,11 @@ public class WageCalculatorTest {
 
     @Test
     public void startTimeIsInitializedToZero() {
-        WageCalculator wageCalculator = new WageCalculator();
         assertEquals("0", wageCalculator.getStartTime());
+    }
+
+    @Test
+    public void endTimeIsInitializedToZero() {
+        assertEquals("0", wageCalculator.getEndTime());
     }
 }
