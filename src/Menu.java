@@ -24,4 +24,8 @@ public class Menu {
 
         return Integer.parseInt(userInputTime);
     }
+
+    static void incorrectRangeWarning() {
+        System.out.println("Warning! Your start time and end time were not in the right order. Please try again.");
+    }
 }

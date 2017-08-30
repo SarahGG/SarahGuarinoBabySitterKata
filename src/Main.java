@@ -12,9 +12,16 @@ public class Main {
         Integer startTime;
         Integer endTime;
 
-        startTime = Menu.requestTimeFromUser("What time did you start?\n>: ");
-        wageCalculator.setStartTime(startTime);
-        endTime = Menu.requestTimeFromUser("What time did you leave?\n>: ");
-        wageCalculator.setEndTime(endTime);
+        do {
+            startTime = Menu.requestTimeFromUser("What time did you start?\n>: ");
+            wageCalculator.setStartTime(startTime);
+            endTime = Menu.requestTimeFromUser("What time did you leave?\n>: ");
+            wageCalculator.setEndTime(endTime);
+
+            if(!(Validator.rangeIsInOrder(startTime, endTime))) {
+                Menu.incorrectRangeWarning();
+            }
+        }
+        while(!(Validator.rangeIsInOrder(startTime, endTime)));
     }
 }
