@@ -29,6 +29,13 @@ class WageCalculator {
 //                + "endTime has been set to " + endTime);
     }
 
+    void setBedTime(Integer bedTime) {
+        bedTime = Util.fixTimesAfterMidnight(bedTime);
+        this.bedTime = bedTime;
+        System.out.println("TEST: setBedTime WageCalculatorTest.java\n"
+                + "bedTime has been set to " + endTime);
+    }
+
     Integer getStartTime() {
         return this.startTime;
     }

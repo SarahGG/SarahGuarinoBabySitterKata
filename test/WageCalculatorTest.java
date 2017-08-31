@@ -43,6 +43,11 @@ public class WageCalculatorTest {
         wageCalculator.setEndTime(5);
         assertEquals("5", wageCalculator.getEndTime().toString());
     }
+    @Test
+    public void bedTimeIsInitializedToFive() {
+        wageCalculator.setBedTime(5);
+        assertEquals("5", wageCalculator.getBedTime().toString());
+    }
 
     @Test
     public void inputIsAWholeNumber() {
