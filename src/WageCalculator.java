@@ -28,6 +28,10 @@ class WageCalculator {
     }
 
     void setEndTime(Integer endTime) {
+        if((1 <= startTime) && (startTime <= 4)) {
+            startTime += 12;
+        }
+
         this.endTime = endTime;
 //        System.out.println("TEST: setEndTime WageCalculatorTest.java Line 24\n"
 //                + "endTime has been set to " + endTime);
