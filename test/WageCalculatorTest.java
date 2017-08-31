@@ -51,12 +51,6 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void ThreeAMReturnsFifteen() {
-        wageCalculator.setStartTime(3);
-        assertEquals("15", wageCalculator.getStartTime().toString());
-    }
-
-    @Test
     public void workingFiveToMidNightReturnsSeven() {
         wageCalculator.setStartTime(5);
         wageCalculator.setEndTime(12);
