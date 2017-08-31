@@ -58,6 +58,13 @@ public class WageCalculatorTest {
     }
 
     @Test
+    public void workingFiveToTwoReturnsNine() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setEndTime(2);
+        assertEquals("9", wageCalculator.getTotalHoursWorked().toString());
+    }
+
+    @Test
     public void startTimeAtFivewithBedTimeAtNineReturnsFourBaseHours() {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(9);
