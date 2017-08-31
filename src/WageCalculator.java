@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * Sarah's daily baby sitting wage calculator.
  *
@@ -18,22 +16,14 @@ class WageCalculator {
     }
 
     void setStartTime(Integer startTime) {
-        // makes anything after midnight it's hour value plus 12.
-        // Think military time where noon is 0 instead of 12.
-        if((1 <= startTime) && (startTime <= 4)) {
-            startTime += 12;
-        }
-
+        startTime = Util.fixTimesAfterMidnight(startTime);
         this.startTime = startTime;
 //        System.out.println("TEST: setStartTime WageCalculatorTest.java\n"
 //                + "startTime has been set to " + startTime);
     }
 
     void setEndTime(Integer endTime) {
-        if((1 <= endTime) && (endTime <= 4)) {
-            endTime += 12;
-        }
-
+        endTime = Util.fixTimesAfterMidnight(endTime);
         this.endTime = endTime;
 //        System.out.println("TEST: setEndTime WageCalculatorTest.java\n"
 //                + "endTime has been set to " + endTime);
