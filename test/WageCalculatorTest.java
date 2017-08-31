@@ -87,4 +87,11 @@ public class WageCalculatorTest {
     public void workingFiveToNineReturnsTrue() {
         assertEquals(true, Validator.rangeIsInOrder(5, 9));
     }
+
+    @Test
+    public void startTimeAtFivewithBedTimeAtNineReturnsFourBaseHours() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setBedTime(9);
+        assertEquals("4", wageCalculator.getBaseHours().toString());
+    }
 }

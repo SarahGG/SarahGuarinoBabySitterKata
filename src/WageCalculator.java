@@ -32,8 +32,8 @@ class WageCalculator {
     void setBedTime(Integer bedTime) {
         bedTime = Util.fixTimesAfterMidnight(bedTime);
         this.bedTime = bedTime;
-        System.out.println("TEST: setBedTime WageCalculatorTest.java\n"
-                + "bedTime has been set to " + this.bedTime);
+//        System.out.println("TEST: setBedTime WageCalculatorTest.java\n"
+//                + "bedTime has been set to " + this.bedTime);
     }
 
     Integer getStartTime() {
@@ -50,5 +50,13 @@ class WageCalculator {
 
     Integer getTotalHoursWorked() {
         return (this.endTime - this.startTime);
+    }
+
+    Integer getBaseHours() {
+        if(this.bedTime > 12) {
+            return (12 - this.startTime);
+        } else {
+            return (this.bedTime - this.startTime);
+        }
     }
 }
