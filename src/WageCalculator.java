@@ -59,4 +59,8 @@ class WageCalculator {
             return (this.bedTime - this.startTime);
         }
     }
+
+    Integer getDiscountHours() {
+        return 12 - this.bedTime;
+    }
 }
