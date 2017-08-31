@@ -20,7 +20,6 @@ class Validator {
     }
 
     static boolean rangeIsInOrder(Integer startTime, Integer endTime) {
-        Integer totalHoursWorked = endTime - startTime;
-        return (totalHoursWorked >= 0);
+        return ((endTime - startTime) >= 0);
     }
 }
