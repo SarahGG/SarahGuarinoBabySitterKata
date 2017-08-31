@@ -28,6 +28,11 @@ public class WageCalculatorTest {
     }
 
     @Test
+    public void bedTimeIsInitializedToZero() {
+        assertEquals("0", wageCalculator.getBedTime().toString());
+    }
+
+    @Test
     public void startTimeIsInitializedToFive() {
         wageCalculator.setStartTime(5);
         assertEquals("5", wageCalculator.getStartTime().toString());

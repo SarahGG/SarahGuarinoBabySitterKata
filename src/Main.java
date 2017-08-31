@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * Main class for Sarah's daily babysitting wage calculator.
  *
@@ -9,8 +7,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         WageCalculator wageCalculator = new WageCalculator();
+
         Integer startTime;
         Integer endTime;
+        Integer bedTime;
 
         do {
             startTime = Menu.requestTimeFromUser("What time did you start?\n>: ");
