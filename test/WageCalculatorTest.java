@@ -81,12 +81,19 @@ public class WageCalculatorTest {
     @Test
     public void bedTimeAtNineReturnsThreeDisCountHours() {
         wageCalculator.setBedTime(9);
-        assertEquals("3", wageCalculator.getDiscountHours().toString());
+        assertEquals("3", wageCalculator.getDiscountedHours().toString());
     }
 
     @Test
     public void bedTimeAtOneReturnsZeroDisCountHours() {
         wageCalculator.setBedTime(1);
-        assertEquals("0", wageCalculator.getDiscountHours().toString());
+        assertEquals("0", wageCalculator.getDiscountedHours().toString());
+    }
+
+    @Test
+    public void bedTimeAtSevenWithStartTimeAtEightReturnsFourDiscountHours() {
+        wageCalculator.setStartTime(8);
+        wageCalculator.setBedTime(7);
+        assertEquals("4", wageCalculator.getDiscountedHours().toString());
     }
 }
