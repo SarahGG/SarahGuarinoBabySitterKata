@@ -61,6 +61,10 @@ class WageCalculator {
     }
 
     Integer getDiscountHours() {
-        return 12 - this.bedTime;
+        if(bedTime >= 12) {
+            return 0;
+        } else {
+            return 12 - this.bedTime;
+        }
     }
 }

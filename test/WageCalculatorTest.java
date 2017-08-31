@@ -107,4 +107,10 @@ public class WageCalculatorTest {
         wageCalculator.setBedTime(9);
         assertEquals("3", wageCalculator.getDiscountHours().toString());
     }
+
+    @Test
+    public void bedTimeAtOneReturnsZeroDisCountHours() {
+        wageCalculator.setBedTime(1);
+        assertEquals("0", wageCalculator.getDiscountHours().toString());
+    }
 }
