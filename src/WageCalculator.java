@@ -61,12 +61,20 @@ class WageCalculator {
     }
 
     Integer getDiscountedHours() {
+        Integer cutOffTime;
+
+        if(this.endTime > 12) {
+            cutOffTime = 12;
+        } else {
+            cutOffTime = this.endTime;
+        }
+
         if(bedTime >= 12) {
             return 0;
         } else if(this.startTime > this.bedTime) {
-            return 12 - this.startTime;
+            return cutOffTime - this.startTime;
         } else {
-            return 12 - this.bedTime;
+            return cutOffTime - this.bedTime;
         }
     }
 }
