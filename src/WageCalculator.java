@@ -19,21 +19,21 @@ class WageCalculator {
         startTime = Util.fixTimesAfterMidnight(startTime);
         this.startTime = startTime;
 //        System.out.println("TEST: setStartTime WageCalculatorTest.java\n"
-//                + "startTime has been set to " + startTime);
+//                + "startTime has been set to " + this.startTime);
     }
 
     void setEndTime(Integer endTime) {
         endTime = Util.fixTimesAfterMidnight(endTime);
         this.endTime = endTime;
 //        System.out.println("TEST: setEndTime WageCalculatorTest.java\n"
-//                + "endTime has been set to " + endTime);
+//                + "endTime has been set to " + this.endTime);
     }
 
     void setBedTime(Integer bedTime) {
         bedTime = Util.fixTimesAfterMidnight(bedTime);
         this.bedTime = bedTime;
         System.out.println("TEST: setBedTime WageCalculatorTest.java\n"
-                + "bedTime has been set to " + endTime);
+                + "bedTime has been set to " + this.bedTime);
     }
 
     Integer getStartTime() {

@@ -20,8 +20,13 @@ public class Main {
 
             if(!(Validator.rangeIsInOrder(startTime, endTime))) {
                 Menu.incorrectRangeWarning();
+                continue;
             }
+
+            bedTime = Menu.requestTimeFromUser("What is the child's bed time?\n>: ");
+            wageCalculator.setBedTime(bedTime);
         }
         while(!(Validator.rangeIsInOrder(startTime, endTime)));
+
     }
 }
