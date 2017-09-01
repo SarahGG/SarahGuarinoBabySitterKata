@@ -84,6 +84,7 @@ class WageCalculator {
         if(this.endTime <= 12) {
             return 0;
         } else {
+            return (this.endTime - 12);
         }
     }
 }

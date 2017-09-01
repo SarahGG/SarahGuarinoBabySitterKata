@@ -119,4 +119,20 @@ public class WageCalculatorTest {
         wageCalculator.setEndTime(9);
         assertEquals("2", wageCalculator.getDiscountedHours().toString());
     }
+
+    @Test
+    public void endTimeAtElevenReturnsZeroPremiumHours() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setBedTime(9);
+        wageCalculator.setEndTime(11);
+        assertEquals("0", wageCalculator.getPremiumHours().toString());
+    }
+
+    @Test
+    public void endTimeAtFourReturnsFourPremiumHours() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setBedTime(9);
+        wageCalculator.setEndTime(4);
+        assertEquals("4", wageCalculator.getPremiumHours().toString());
+    }
 }
