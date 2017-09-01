@@ -62,7 +62,7 @@ class WageCalculator {
         }
     }
 
-    Integer getDiscountedHours() {
+    Integer getDiscountHours() {
         Integer cutOffTime;
 
         if(this.endTime > 12) {

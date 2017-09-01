@@ -93,7 +93,7 @@ public class WageCalculatorTest {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(9);
         wageCalculator.setEndTime(4);
-        assertEquals("3", wageCalculator.getDiscountedHours().toString());
+        assertEquals("3", wageCalculator.getDiscountHours().toString());
     }
 
     @Test
@@ -101,7 +101,7 @@ public class WageCalculatorTest {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(1);
         wageCalculator.setEndTime(4);
-        assertEquals("0", wageCalculator.getDiscountedHours().toString());
+        assertEquals("0", wageCalculator.getDiscountHours().toString());
     }
 
     @Test
@@ -109,7 +109,7 @@ public class WageCalculatorTest {
         wageCalculator.setStartTime(8);
         wageCalculator.setBedTime(7);
         wageCalculator.setEndTime(12);
-        assertEquals("4", wageCalculator.getDiscountedHours().toString());
+        assertEquals("4", wageCalculator.getDiscountHours().toString());
     }
 
     @Test
@@ -117,7 +117,7 @@ public class WageCalculatorTest {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(7);
         wageCalculator.setEndTime(9);
-        assertEquals("2", wageCalculator.getDiscountedHours().toString());
+        assertEquals("2", wageCalculator.getDiscountHours().toString());
     }
 
     @Test
