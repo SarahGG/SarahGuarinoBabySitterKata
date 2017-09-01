@@ -79,4 +79,11 @@ class WageCalculator {
             return cutOffTime - this.bedTime;
         }
     }
+
+    Integer getPremiumHours() {
+        if(this.endTime <= 12) {
+            return 0;
+        } else {
+        }
+    }
 }
