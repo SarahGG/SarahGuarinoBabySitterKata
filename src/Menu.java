@@ -35,6 +35,10 @@ public class Menu {
         System.out.printf("\t@ %f/hr: %d hours\n", 12.00, wageCalculator.getBaseHours());
     }
 
+    static void printDiscountHours(WageCalculator wageCalculator) {
+        System.out.printf("\t@ %f/hr: %d hours\n", 8.00, wageCalculator.getDiscountHours());
+    }
+
     static void printMenuHeader() {
         System.out.println("\n** TODAY'S TIME SHEET *********");
     }
