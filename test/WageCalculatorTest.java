@@ -54,14 +54,14 @@ public class WageCalculatorTest {
     public void workingFiveToMidNightReturnsSeven() {
         wageCalculator.setStartTime(5);
         wageCalculator.setEndTime(12);
-        assertEquals("7", wageCalculator.getTotalHoursWorked().toString());
+        assertEquals("7", wageCalculator.getTotalHours().toString());
     }
 
     @Test
     public void workingFiveToTwoReturnsNine() {
         wageCalculator.setStartTime(5);
         wageCalculator.setEndTime(2);
-        assertEquals("9", wageCalculator.getTotalHoursWorked().toString());
+        assertEquals("9", wageCalculator.getTotalHours().toString());
     }
 
     @Test
