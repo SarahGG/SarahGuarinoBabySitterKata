@@ -30,5 +30,6 @@ public class Main {
 
         Menu.printMenuHeader();
         Menu.printTotalHours(wageCalculator);
+        Menu.printBaseHours(wageCalculator);
     }
 }

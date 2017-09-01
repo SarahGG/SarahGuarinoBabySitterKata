@@ -28,7 +28,11 @@ public class Menu {
     }
 
     static void printTotalHours(WageCalculator wageCalculator) {
-        System.out.printf("Total hours worked: %d", wageCalculator.getTotalHours());
+        System.out.printf("Total hours worked: %d\n", wageCalculator.getTotalHours());
+    }
+
+    static void printBaseHours(WageCalculator wageCalculator) {
+        System.out.printf("\t@ %f/hr: %d hours\n", 12.00, wageCalculator.getBaseHours());
     }
 
     static void printMenuHeader() {
