@@ -28,6 +28,10 @@ public class Menu {
     }
 
     static void printTotalHours(WageCalculator wageCalculator) {
-        System.out.printf("You have worked a total of %d hours", wageCalculator.getTotalHours());
+        System.out.printf("Total hours worked: %d", wageCalculator.getTotalHours());
+    }
+
+    static void printMenuHeader() {
+        System.out.println("\n** TODAY'S TIME SHEET *********");
     }
 }

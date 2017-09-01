@@ -28,6 +28,7 @@ public class Main {
         }
         while(!(Validator.rangeIsInOrder(wageCalculator.getStartTime(), wageCalculator.getEndTime())));
 
+        Menu.printMenuHeader();
         Menu.printTotalHours(wageCalculator);
     }
 }
