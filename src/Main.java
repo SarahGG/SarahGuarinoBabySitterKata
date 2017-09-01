@@ -26,7 +26,8 @@ public class Main {
             bedTime = Menu.requestTimeFromUser("What is the child's bed time?\n>: ");
             wageCalculator.setBedTime(bedTime);
         }
-        while(!(Validator.rangeIsInOrder(startTime, endTime)));
+        while(!(Validator.rangeIsInOrder(wageCalculator.getStartTime(), wageCalculator.getEndTime())));
 
+        Menu.printTotalHours(wageCalculator);
     }
 }
