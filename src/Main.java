@@ -18,7 +18,7 @@ public class Main {
             endTime = Menu.requestTimeFromUser("What time did you leave?\n>: ");
             wageCalculator.setEndTime(endTime);
 
-            if(!(Validator.rangeIsInOrder(startTime, endTime))) {
+            if(!(Validator.rangeIsInOrder(wageCalculator.getStartTime(), wageCalculator.getEndTime()))) {
                 Menu.incorrectRangeWarning();
                 continue;
             }

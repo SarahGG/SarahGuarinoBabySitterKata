@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import static sun.plugin.AppletViewer.setStartTime;
-
 /**
  * Class description
  *
@@ -27,5 +25,9 @@ public class Menu {
 
     static void incorrectRangeWarning() {
         System.out.println("Warning! Your start time and end time were not in the right order. Please try again.");
+    }
+
+    static void printTotalHours(WageCalculator wageCalculator) {
+        System.out.printf("You have worked a total of %d hours", wageCalculator.getTotalHours());
     }
 }
