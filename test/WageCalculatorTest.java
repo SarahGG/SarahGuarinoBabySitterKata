@@ -135,4 +135,12 @@ public class WageCalculatorTest {
         wageCalculator.setEndTime(4);
         assertEquals("4", wageCalculator.getPremiumHours().toString());
     }
+
+    @Test
+    public void endTimeAtTwoReturnsTwoPremiumHours() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setBedTime(9);
+        wageCalculator.setEndTime(2);
+        assertEquals("2", wageCalculator.getPremiumHours().toString());
+    }
 }
