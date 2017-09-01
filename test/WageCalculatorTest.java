@@ -68,12 +68,22 @@ public class WageCalculatorTest {
     public void startTimeAtFivewithBedTimeAtNineReturnsFourBaseHours() {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(9);
+        wageCalculator.setEndTime(4);
         assertEquals("4", wageCalculator.getBaseHours().toString());
+    }
+
+    @Test
+    public void startTimeAtFivewithEndTimeAtEightAndBedTimeAtNineReturnsThreeBaseHours() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setEndTime(8);
+        wageCalculator.setBedTime(9);
+        assertEquals("3", wageCalculator.getBaseHours().toString());
     }
 
     @Test
     public void startTimeAtFivewithBedTimeAtTwoReturnsSevenBaseHours() {
         wageCalculator.setStartTime(5);
+        wageCalculator.setEndTime(4);
         wageCalculator.setBedTime(2);
         assertEquals("7", wageCalculator.getBaseHours().toString());
     }
