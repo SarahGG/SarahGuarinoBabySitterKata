@@ -58,6 +58,8 @@ class WageCalculator {
     Integer getBaseHours() {
         if(this.bedTime > this.endTime) {
             return this.endTime - this.startTime;
+        } else if (this.bedTime < this.startTime) {
+            return 0;
         } else if(this.bedTime > 12) {
             return (12 - this.startTime);
         } else {

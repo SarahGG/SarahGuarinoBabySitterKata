@@ -151,4 +151,20 @@ public class WageCalculatorTest {
         wageCalculator.setEndTime(4);
         assertEquals("48.00", wageCalculator.getBasePay());
     }
+
+    @Test
+    public void ZeroHoursAtBaseRateReturnsZeroDollars() {
+        wageCalculator.setStartTime(9);
+        wageCalculator.setBedTime(7);
+        wageCalculator.setEndTime(4);
+        assertEquals("0.00", wageCalculator.getBasePay());
+    }
+
+    @Test
+    public void SevenHoursAtBaseRateReturnsFortyEightDollars() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setBedTime(1);
+        wageCalculator.setEndTime(4);
+        assertEquals("84.00", wageCalculator.getBasePay());
+    }
 }
