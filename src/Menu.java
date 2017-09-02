@@ -8,7 +8,17 @@ import java.util.Scanner;
  * @version 1.0
  */
 class Menu {
-    private static DecimalFormat decimalFormat = new DecimalFormat("0.00");
+    private static DecimalFormat decimalFormat;
+    private static String BASERATE;
+    private static String DISCOUNTRATE;
+    private static String PREMIUMRATE;
+
+    public Menu() {
+        decimalFormat = new DecimalFormat("0.00");
+        BASERATE = decimalFormat.format(12.00);
+        DISCOUNTRATE = decimalFormat.format(8.00);
+        PREMIUMRATE = decimalFormat.format(16.00);
+    }
 
     static Integer requestTimeFromUser(String prompt) {
         Scanner scnr = new Scanner(System.in);
@@ -35,15 +45,15 @@ class Menu {
     }
 
     static void printBaseHours(WageCalculator wageCalculator) {
-        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", decimalFormat.format(12.00), wageCalculator.getBaseHours());
+        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", BASERATE, wageCalculator.getBaseHours());
     }
 
     static void printDiscountHours(WageCalculator wageCalculator) {
-        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", decimalFormat.format(8.00), wageCalculator.getDiscountHours());
+        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", DISCOUNTRATE, wageCalculator.getDiscountHours());
     }
 
     static void printPremiumHours(WageCalculator wageCalculator) {
-        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", decimalFormat.format(16.00), wageCalculator.getPremiumHours());
+        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", PREMIUMRATE, wageCalculator.getPremiumHours());
     }
 
     static void printMenuHeader() {
