@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -6,7 +7,9 @@ import java.util.Scanner;
  * @author Sarah Guarino
  * @version 1.0
  */
-public class Menu {
+class Menu {
+    private static DecimalFormat decimalFormat = new DecimalFormat("0.00");
+
     static Integer requestTimeFromUser(String prompt) {
         Scanner scnr = new Scanner(System.in);
         String userInputTime;
@@ -32,15 +35,15 @@ public class Menu {
     }
 
     static void printBaseHours(WageCalculator wageCalculator) {
-        System.out.printf("\t@ %f/hr: %d hours\n", 12.00, wageCalculator.getBaseHours());
+        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", decimalFormat.format(12.00), wageCalculator.getBaseHours());
     }
 
     static void printDiscountHours(WageCalculator wageCalculator) {
-        System.out.printf("\t@ %f/hr: %d hours\n", 8.00, wageCalculator.getDiscountHours());
+        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", decimalFormat.format(8.00), wageCalculator.getDiscountHours());
     }
 
     static void printPremiumHours(WageCalculator wageCalculator) {
-        System.out.printf("\t@ %f/hr: %d hours\n", 16.00, wageCalculator.getPremiumHours());
+        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", decimalFormat.format(16.00), wageCalculator.getPremiumHours());
     }
 
     static void printMenuHeader() {
