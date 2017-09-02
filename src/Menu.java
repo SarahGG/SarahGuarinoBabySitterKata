@@ -45,7 +45,10 @@ class Menu {
     }
 
     static void printBaseHours(WageCalculator wageCalculator) {
-        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", BASERATE, wageCalculator.getBaseHours());
+        System.out.printf("\t%s/hr * %d hours\t= $%s\n",
+                BASERATE,
+                wageCalculator.getBaseHours(),
+                wageCalculator.getBasePay());
     }
 
     static void printDiscountHours(WageCalculator wageCalculator) {

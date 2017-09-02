@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 /**
  * Sarah's daily baby sitting wage calculator.
  *
@@ -8,6 +10,7 @@ class WageCalculator {
     private Integer startTime;
     private Integer endTime;
     private Integer bedTime;
+    final private Double BASERATE = 12.00;
 
     WageCalculator() {
         startTime = 0;
@@ -60,6 +63,10 @@ class WageCalculator {
         } else {
             return (this.bedTime - this.startTime);
         }
+    }
+
+    String getBasePay() {
+        return new DecimalFormat("0.00").format(getBaseHours() * BASERATE);
     }
 
     Integer getDiscountHours() {
