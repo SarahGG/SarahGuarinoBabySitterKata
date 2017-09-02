@@ -4,7 +4,7 @@
  * @author Sarah Guarino
  * @version 1.0
  */
-public class Util {
+class Util {
     static Integer fixTimesAfterMidnight(Integer time) {
         // makes anything after midnight it's hour value plus 12.
         // Think military time where noon is 0 instead of 12.
