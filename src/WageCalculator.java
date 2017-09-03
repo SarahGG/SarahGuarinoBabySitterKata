@@ -61,7 +61,7 @@ class WageCalculator {
         Double basePay = Double.parseDouble(getBasePay());
         Double discountPay = Double.parseDouble(getDiscountPay());
         Double premiumPay = Double.parseDouble(getPremiumPay());
-        
+
         return new DecimalFormat("0.00").format(basePay + discountPay + premiumPay);
     }
 
@@ -86,20 +86,18 @@ class WageCalculator {
     }
 
     Integer getDiscountHours() {
-        Integer cutOffTime;
-
-        if(this.endTime > 12) {
-            cutOffTime = 12;
-        } else {
-            cutOffTime = this.endTime;
-        }
-
-        if(bedTime >= 12) {
+        if((this.bedTime > 12) || ((this.endTime < 12) && (this.bedTime > this.endTime))) {
             return 0;
-        } else if(this.startTime > this.bedTime) {
-            return cutOffTime - this.startTime;
+        } else if(this.startTime > this.bedTime){
+            if(12 > this.endTime) {
+                return (this.startTime - this.endTime);
+            } else {
+                return (12 - this.startTime);
+            }
+        } else if(this.endTime < 12){
+            return (this.endTime - this.bedTime);
         } else {
-            return cutOffTime - this.bedTime;
+            return (12 - this.bedTime);
         }
     }
 
