@@ -33,5 +33,6 @@ public class Main {
         Menu.printBaseHours(wageCalculator);
         Menu.printDiscountHours(wageCalculator);
         Menu.printPremiumHours(wageCalculator);
+        Menu.printTotalPay(wageCalculator);
     }
 }
