@@ -231,4 +231,12 @@ public class WageCalculatorTest {
         wageCalculator.setEndTime(9);
         assertEquals("48.00", wageCalculator.getTotalPay());
     }
+
+    @Test
+    public void workingMidNightToFourReturnsSixtyFourDollars() {
+        wageCalculator.setStartTime(12);
+        wageCalculator.setBedTime(1);
+        wageCalculator.setEndTime(4);
+        assertEquals("64.00", wageCalculator.getTotalPay());
+    }
 }
