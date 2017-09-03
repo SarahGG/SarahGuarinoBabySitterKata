@@ -199,4 +199,20 @@ public class WageCalculatorTest {
         wageCalculator.setEndTime(4);
         assertEquals("64.00", wageCalculator.getPremiumPay());
     }
+
+    @Test
+    public void TwoHoursAtPremiumRateReturnsThirtyTwoDollars() {
+        wageCalculator.setStartTime(1);
+        wageCalculator.setBedTime(9);
+        wageCalculator.setEndTime(2);
+        assertEquals("32.00", wageCalculator.getPremiumPay());
+    }
+
+    @Test
+    public void ZeroHoursAtPremiumRateReturnsZeroDollars() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setBedTime(9);
+        wageCalculator.setEndTime(11);
+        assertEquals("0.00", wageCalculator.getPremiumPay());
+    }
 }
