@@ -52,7 +52,10 @@ class Menu {
     }
 
     static void printDiscountHours(WageCalculator wageCalculator) {
-        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", DISCOUNTRATE, wageCalculator.getDiscountHours());
+        System.out.printf("\t%s/hr * %d hours\t= $%s\n",
+                DISCOUNTRATE,
+                wageCalculator.getDiscountHours(),
+                wageCalculator.getDiscountPay());
     }
 
     static void printPremiumHours(WageCalculator wageCalculator) {

@@ -11,6 +11,7 @@ class WageCalculator {
     private Integer endTime;
     private Integer bedTime;
     final private Double BASERATE = 12.00;
+    final private Double DISCOUNTRATE = 8.00;
 
     WageCalculator() {
         startTime = 0;
@@ -87,6 +88,10 @@ class WageCalculator {
         } else {
             return cutOffTime - this.bedTime;
         }
+    }
+
+    String getDiscountPay() {
+        return new DecimalFormat("0.00").format(getDiscountHours() * DISCOUNTRATE);
     }
 
     Integer getPremiumHours() {

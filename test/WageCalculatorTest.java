@@ -161,10 +161,18 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void SevenHoursAtBaseRateReturnsFortyEightDollars() {
+    public void SevenHoursAtBaseRateReturnsEightyFourDollars() {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(1);
         wageCalculator.setEndTime(4);
         assertEquals("84.00", wageCalculator.getBasePay());
+    }
+
+    @Test
+    public void ThreeHoursArDiscountRateReturnsTwentyFourDollars() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setBedTime(9);
+        wageCalculator.setEndTime(4);
+        assertEquals("24.00", wageCalculator.getDiscountPay());
     }
 }
