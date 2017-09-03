@@ -57,6 +57,10 @@ class Menu {
     }
 
     static void printMenuHeader() {
-        System.out.println("\n** TODAY'S TIME SHEET *********");
+        System.out.println("\n** TODAY'S TIME SHEET *********\n");
+    }
+
+    static void printMenuFooter() {
+        System.out.println("\n** THANK YOU ******************");
     }
 }

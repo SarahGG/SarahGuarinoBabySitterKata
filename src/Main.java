@@ -34,5 +34,6 @@ public class Main {
         Menu.printDiscountHours(wageCalculator);
         Menu.printPremiumHours(wageCalculator);
         Menu.printTotalPay(wageCalculator);
+        Menu.printMenuFooter();
     }
 }
