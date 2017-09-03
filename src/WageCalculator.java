@@ -69,6 +69,10 @@ class WageCalculator {
         }
     }
 
+    String getBaseRate() {
+        return new DecimalFormat("0.00").format(this.BASERATE);
+    }
+
     String getBasePay() {
         return new DecimalFormat("0.00").format(getBaseHours() * BASERATE);
     }
@@ -91,6 +95,10 @@ class WageCalculator {
         }
     }
 
+    String getDiscountRate() {
+        return new DecimalFormat("0.00").format(this.DISCOUNTRATE);
+    }
+
     String getDiscountPay() {
         return new DecimalFormat("0.00").format(getDiscountHours() * DISCOUNTRATE);
     }
@@ -101,6 +109,10 @@ class WageCalculator {
         } else {
             return (this.endTime - 12);
         }
+    }
+
+    String getPremiumRate() {
+        return new DecimalFormat("0.00").format(this.PREMIUMRATE);
     }
 
     String getPremiumPay() {
