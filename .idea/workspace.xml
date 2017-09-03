@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e0b4972-9b5f-4cf6-83f3-a871b1d53920" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Menu.java" afterPath="$PROJECT_DIR$/src/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WageCalculator.java" afterPath="$PROJECT_DIR$/src/WageCalculator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/WageCalculatorTest.java" afterPath="$PROJECT_DIR$/test/WageCalculatorTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -68,8 +66,8 @@
       <file leaf-file-name="WageCalculatorTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/WageCalculatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="163" column="53" lean-forward="false" selection-start-line="163" selection-start-column="53" selection-end-line="163" selection-end-column="53" />
+            <state relative-caret-position="334">
+              <caret line="191" column="23" lean-forward="false" selection-start-line="191" selection-start-column="23" selection-end-line="191" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -771,14 +769,11 @@
       <updated>1504061855051</updated>
       <workItem from="1504061863390" duration="227000" />
       <workItem from="1504098432400" duration="19656000" />
-      <workItem from="1504391026025" duration="4210000" />
+      <workItem from="1504391026025" duration="4594000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="WageCalculatorTest - 2017.09.02 at 19h 52m 28s.xml">
-      <configuration name="WageCalculatorTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="WageCalculatorTest - 2017.09.02 at 19h 53m 26s.xml">
       <configuration name="WageCalculatorTest" configurationId="JUnit" />
     </history-entry>
@@ -800,15 +795,18 @@
     <history-entry file="WageCalculatorTest - 2017.09.02 at 20h 06m 15s.xml">
       <configuration name="WageCalculatorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WageCalculatorTest_FourHoursAtBaseRateReturnsFortyEightDollars - 2017.09.02 at 19h 40m 54s.xml">
-      <configuration name="WageCalculatorTest.FourHoursAtBaseRateReturnsFortyEightDollars" configurationId="JUnit" />
+    <history-entry file="WageCalculatorTest - 2017.09.02 at 20h 10m 20s.xml">
+      <configuration name="WageCalculatorTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="WageCalculatorTest_FourHoursAtBaseRateReturnsFortyEightDollars - 2017.09.02 at 19h 46m 01s.xml">
-      <configuration name="WageCalculatorTest.FourHoursAtBaseRateReturnsFortyEightDollars" configurationId="JUnit" />
+    <history-entry file="WageCalculatorTest - 2017.09.02 at 20h 13m 00s.xml">
+      <configuration name="WageCalculatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WageCalculatorTest - 2017.09.02 at 20h 13m 10s.xml">
+      <configuration name="WageCalculatorTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29298000" />
+    <option name="totallyTimeSpent" value="29682000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -824,7 +822,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10861182" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28451884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28451884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1271,8 +1269,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/WageCalculatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="163" column="53" lean-forward="false" selection-start-line="163" selection-start-column="53" selection-end-line="163" selection-end-column="53" />
+        <state relative-caret-position="334">
+          <caret line="191" column="23" lean-forward="false" selection-start-line="191" selection-start-column="23" selection-end-line="191" selection-end-column="23" />
           <folding />
         </state>
       </provider>

@@ -169,10 +169,26 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void ThreeHoursArDiscountRateReturnsTwentyFourDollars() {
+    public void ThreeHoursAtDiscountRateReturnsTwentyFourDollars() {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(9);
         wageCalculator.setEndTime(4);
         assertEquals("24.00", wageCalculator.getDiscountPay());
+    }
+
+    @Test
+    public void SixHoursAtDiscountRateReturnsFortyEightDollars() {
+        wageCalculator.setStartTime(6);
+        wageCalculator.setBedTime(5);
+        wageCalculator.setEndTime(4);
+        assertEquals("48.00", wageCalculator.getDiscountPay());
+    }
+
+    @Test
+    public void ZeroHoursAtDiscountRateReturnsZeroDollars() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setBedTime(2);
+        wageCalculator.setEndTime(4);
+        assertEquals("0.00", wageCalculator.getDiscountPay());
     }
 }
