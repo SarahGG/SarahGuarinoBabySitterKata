@@ -145,7 +145,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void FourHoursAtBaseRateReturnsFortyEightDollars() {
+    public void fourHoursAtBaseRateReturnsFortyEightDollars() {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(9);
         wageCalculator.setEndTime(4);
@@ -153,7 +153,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void ZeroHoursAtBaseRateReturnsZeroDollars() {
+    public void zeroHoursAtBaseRateReturnsZeroDollars() {
         wageCalculator.setStartTime(9);
         wageCalculator.setBedTime(7);
         wageCalculator.setEndTime(4);
@@ -161,7 +161,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void SevenHoursAtBaseRateReturnsEightyFourDollars() {
+    public void sevenHoursAtBaseRateReturnsEightyFourDollars() {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(1);
         wageCalculator.setEndTime(4);
@@ -169,7 +169,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void ThreeHoursAtDiscountRateReturnsTwentyFourDollars() {
+    public void threeHoursAtDiscountRateReturnsTwentyFourDollars() {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(9);
         wageCalculator.setEndTime(4);
@@ -177,7 +177,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void SixHoursAtDiscountRateReturnsFortyEightDollars() {
+    public void sixHoursAtDiscountRateReturnsFortyEightDollars() {
         wageCalculator.setStartTime(6);
         wageCalculator.setBedTime(5);
         wageCalculator.setEndTime(4);
@@ -185,7 +185,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void ZeroHoursAtDiscountRateReturnsZeroDollars() {
+    public void zeroHoursAtDiscountRateReturnsZeroDollars() {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(2);
         wageCalculator.setEndTime(4);
@@ -193,7 +193,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void FourHoursAtPremiumRateReturnsSixtyFourDollars() {
+    public void fourHoursAtPremiumRateReturnsSixtyFourDollars() {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(9);
         wageCalculator.setEndTime(4);
@@ -201,7 +201,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void TwoHoursAtPremiumRateReturnsThirtyTwoDollars() {
+    public void twoHoursAtPremiumRateReturnsThirtyTwoDollars() {
         wageCalculator.setStartTime(1);
         wageCalculator.setBedTime(9);
         wageCalculator.setEndTime(2);
@@ -209,10 +209,18 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void ZeroHoursAtPremiumRateReturnsZeroDollars() {
+    public void zeroHoursAtPremiumRateReturnsZeroDollars() {
         wageCalculator.setStartTime(5);
         wageCalculator.setBedTime(9);
         wageCalculator.setEndTime(11);
         assertEquals("0.00", wageCalculator.getPremiumPay());
+    }
+
+    @Test
+    public void workingFiveToFourWithBedTimeAtNineReturnsOneHundredThirtySix() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setBedTime(9);
+        wageCalculator.setEndTime(4);
+        assertEquals("136.00", wageCalculator.getTotalPay());
     }
 }

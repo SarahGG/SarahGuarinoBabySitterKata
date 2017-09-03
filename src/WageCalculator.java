@@ -57,6 +57,14 @@ class WageCalculator {
         return (this.endTime - this.startTime);
     }
 
+    String getTotalPay() {
+        Double basePay = Double.parseDouble(getBasePay());
+        Double discountPay = Double.parseDouble(getDiscountPay());
+        Double premiumPay = Double.parseDouble(getPremiumPay());
+        
+        return new DecimalFormat("0.00").format(basePay + discountPay + premiumPay);
+    }
+
     Integer getBaseHours() {
         if(this.bedTime > this.endTime) {
             return this.endTime - this.startTime;
