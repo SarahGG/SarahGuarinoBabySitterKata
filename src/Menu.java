@@ -59,7 +59,10 @@ class Menu {
     }
 
     static void printPremiumHours(WageCalculator wageCalculator) {
-        System.out.printf("\t%s/hr * %d hours\t= $00.000\n", PREMIUMRATE, wageCalculator.getPremiumHours());
+        System.out.printf("\t%s/hr * %d hours\t= $%s\n",
+                PREMIUMRATE,
+                wageCalculator.getPremiumHours(),
+                wageCalculator.getPremiumPay());
     }
 
     static void printMenuHeader() {

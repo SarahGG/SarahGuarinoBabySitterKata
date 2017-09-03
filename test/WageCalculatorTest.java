@@ -191,4 +191,12 @@ public class WageCalculatorTest {
         wageCalculator.setEndTime(4);
         assertEquals("0.00", wageCalculator.getDiscountPay());
     }
+
+    @Test
+    public void FourHoursAtPremiumRateReturnsSixtyFourDollars() {
+        wageCalculator.setStartTime(5);
+        wageCalculator.setBedTime(9);
+        wageCalculator.setEndTime(4);
+        assertEquals("64.00", wageCalculator.getPremiumPay());
+    }
 }
