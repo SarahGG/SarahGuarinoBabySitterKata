@@ -12,6 +12,8 @@ public class Main {
         Integer endTime;
         Integer bedTime;
 
+        Menu.printMenuGreeting();
+
         do {
             startTime = Menu.requestTimeFromUser("What time did you start?\n>: ");
             wageCalculator.setStartTime(startTime);

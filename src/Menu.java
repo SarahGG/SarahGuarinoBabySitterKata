@@ -56,8 +56,12 @@ class Menu {
                 wageCalculator.getPremiumPay());
     }
 
+    static void printMenuGreeting() {
+        System.out.println("** DAILY WAGE CALCULATOR ******");
+    }
+
     static void printMenuHeader() {
-        System.out.println("\n** TODAY'S TIME SHEET *********\n");
+        System.out.println("\n** TODAY'S TIME SHEET *********");
     }
 
     static void printMenuFooter() {
