@@ -35,7 +35,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void startTimeAtFivewithBedTimeAtNineReturnsFourBaseHours() {
+    public void startTimeAtFiveWithBedTimeAtNineReturnsFourBaseHours() {
         hoursWorked.setStartTime(5);
         hoursWorked.setBedTime(9);
         hoursWorked.setEndTime(4);
@@ -44,7 +44,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void startTimeAtFivewithEndTimeAtEightAndBedTimeAtNineReturnsThreeBaseHours() {
+    public void startTimeAtFiveWithEndTimeAtEightAndBedTimeAtNineReturnsThreeBaseHours() {
         hoursWorked.setStartTime(5);
         hoursWorked.setEndTime(8);
         hoursWorked.setBedTime(9);
@@ -53,7 +53,7 @@ public class WageCalculatorTest {
     }
 
     @Test
-    public void startTimeAtFivewithBedTimeAtTwoReturnsSevenBaseHours() {
+    public void startTimeAtFiveWithBedTimeAtTwoReturnsSevenBaseHours() {
         hoursWorked.setStartTime(5);
         hoursWorked.setEndTime(4);
         hoursWorked.setBedTime(2);
