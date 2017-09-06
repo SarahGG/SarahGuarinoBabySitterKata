@@ -1,5 +1,6 @@
 /**
- * Class description
+ * Object that sets and gets the
+ * punch-card like record of times worked.
  *
  * @author Sarah Guarino
  * @version 1.0

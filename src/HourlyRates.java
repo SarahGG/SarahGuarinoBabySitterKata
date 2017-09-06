@@ -1,7 +1,5 @@
-import java.text.DecimalFormat;
-
 /**
- * Class description
+ * Carries the different hourly rates
  *
  * @author Sarah Guarino
  * @version 1.0

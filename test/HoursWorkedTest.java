@@ -4,7 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Class description
+ * Test class for HoursWorked.java
  *
  * @author Sarah Guarino
  * @version 1.0
