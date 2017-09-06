@@ -9,27 +9,22 @@ import java.util.Scanner;
 class Menu {
     static HoursWorked getPunchCardTimes() {
         HoursWorked hoursWorked = new HoursWorked();
-        Integer startTime;
-        Integer endTime;
-        Integer bedTime;
 
         Menu.printMenuGreeting();
 
         do {
-            startTime = Menu.requestTimeFromUser("What time did you start?\n>: ");
-            hoursWorked.setStartTime(startTime);
-            endTime = Menu.requestTimeFromUser("What time did you leave?\n>: ");
-            hoursWorked.setEndTime(endTime);
+            hoursWorked.setTimes(
+                    requestTimeFromUser("What time did you start?\n>: "),
+                    requestTimeFromUser("What time did you leave?\n>: "),
+                    requestTimeFromUser("What is the child's bed time?\n>: ")
+            );
 
-            if(!(Validator.rangeIsInOrder(hoursWorked.getStartTime(), hoursWorked.getEndTime()))) {
-                Menu.incorrectRangeWarning();
-                continue;
+            if(Validator.rangeIsInOrder(hoursWorked.getStartTime(), hoursWorked.getEndTime())) {
+                break;
             }
 
-            bedTime = Menu.requestTimeFromUser("What is the child's bed time?\n>: ");
-            hoursWorked.setBedTime(bedTime);
-        }
-        while(!(Validator.rangeIsInOrder(hoursWorked.getStartTime(), hoursWorked.getEndTime())));
+            incorrectRangeWarning();
+        } while(true);
 
         return hoursWorked;
     }
