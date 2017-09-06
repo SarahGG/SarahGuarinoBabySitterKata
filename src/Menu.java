@@ -37,21 +37,21 @@ class Menu {
 
     static void printBaseHours(WageCalculator wageCalculator) {
         System.out.printf("\t%s/hr * %d hours\t= $%s\n",
-                wageCalculator.getBaseRate(),
+                HourlyRates.getBaseRate().toString(),
                 wageCalculator.getBaseHours(),
                 wageCalculator.getBasePay());
     }
 
     static void printDiscountHours(WageCalculator wageCalculator) {
         System.out.printf("\t%s/hr * %d hours\t= $%s\n",
-                wageCalculator.getDiscountRate(),
+                HourlyRates.getDiscountRate().toString(),
                 wageCalculator.getDiscountHours(),
                 wageCalculator.getDiscountPay());
     }
 
     static void printPremiumHours(WageCalculator wageCalculator) {
         System.out.printf("\t%s/hr * %d hours\t= $%s\n",
-                wageCalculator.getPremiumRate(),
+                HourlyRates.getPremiumRate().toString(),
                 wageCalculator.getPremiumHours(),
                 wageCalculator.getPremiumPay());
     }

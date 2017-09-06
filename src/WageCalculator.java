@@ -10,9 +10,6 @@ class WageCalculator {
     private Integer startTime;
     private Integer endTime;
     private Integer bedTime;
-    final private Double BASERATE = 12.00;
-    final private Double DISCOUNTRATE = 8.00;
-    final private Double PREMIUMRATE = 16.00;
 
     WageCalculator() {
         startTime = 0;
@@ -77,12 +74,8 @@ class WageCalculator {
         }
     }
 
-    String getBaseRate() {
-        return new DecimalFormat("0.00").format(this.BASERATE);
-    }
-
     String getBasePay() {
-        return new DecimalFormat("0.00").format(getBaseHours() * BASERATE);
+        return new DecimalFormat("0.00").format(getBaseHours() * HourlyRates.getBaseRate());
     }
 
     Integer getDiscountHours() {
@@ -101,12 +94,8 @@ class WageCalculator {
         }
     }
 
-    String getDiscountRate() {
-        return new DecimalFormat("0.00").format(this.DISCOUNTRATE);
-    }
-
     String getDiscountPay() {
-        return new DecimalFormat("0.00").format(getDiscountHours() * DISCOUNTRATE);
+        return new DecimalFormat("0.00").format(getDiscountHours() * HourlyRates.getDiscountRate());
     }
 
     Integer getPremiumHours() {
@@ -117,11 +106,7 @@ class WageCalculator {
         }
     }
 
-    String getPremiumRate() {
-        return new DecimalFormat("0.00").format(this.PREMIUMRATE);
-    }
-
     String getPremiumPay() {
-        return new DecimalFormat("0.00").format(getPremiumHours() * PREMIUMRATE);
+        return new DecimalFormat("0.00").format(getPremiumHours() * HourlyRates.getPremiumRate());
     }
 }
