@@ -6,7 +6,8 @@
  */
 public class Main {
     public static void main(String[] args) {
-        WageCalculator wageCalculator = new WageCalculator();
+        HoursWorked hoursWorked = new HoursWorked();
+        WageCalculator wageCalculator;
 
         Integer startTime;
         Integer endTime;
@@ -16,19 +17,21 @@ public class Main {
 
         do {
             startTime = Menu.requestTimeFromUser("What time did you start?\n>: ");
-            wageCalculator.setStartTime(startTime);
+            hoursWorked.setStartTime(startTime);
             endTime = Menu.requestTimeFromUser("What time did you leave?\n>: ");
-            wageCalculator.setEndTime(endTime);
+            hoursWorked.setEndTime(endTime);
 
-            if(!(Validator.rangeIsInOrder(wageCalculator.getStartTime(), wageCalculator.getEndTime()))) {
+            if(!(Validator.rangeIsInOrder(hoursWorked.getStartTime(), hoursWorked.getEndTime()))) {
                 Menu.incorrectRangeWarning();
                 continue;
             }
 
             bedTime = Menu.requestTimeFromUser("What is the child's bed time?\n>: ");
-            wageCalculator.setBedTime(bedTime);
+            hoursWorked.setBedTime(bedTime);
         }
-        while(!(Validator.rangeIsInOrder(wageCalculator.getStartTime(), wageCalculator.getEndTime())));
+        while(!(Validator.rangeIsInOrder(hoursWorked.getStartTime(), hoursWorked.getEndTime())));
+
+        wageCalculator = new WageCalculator(hoursWorked);
 
         Menu.printMenuHeader();
         Menu.printTotalHours(wageCalculator);

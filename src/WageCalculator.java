@@ -2,56 +2,20 @@ import java.text.DecimalFormat;
 
 /**
  * Sarah's daily baby sitting wage calculator.
+ * Returns numerical values of the hours worked and the pay earned.
  *
  * @author Sarah Guarino
  * @version 1.0
  */
 class WageCalculator {
-    private Integer startTime;
-    private Integer endTime;
-    private Integer bedTime;
+    private HoursWorked hoursWorked;
 
-    WageCalculator() {
-        startTime = 0;
-        endTime = 0;
-        bedTime = 0;
-    }
-
-    void setStartTime(Integer startTime) {
-        startTime = Util.fixTimesAfterMidnight(startTime);
-        this.startTime = startTime;
-//        System.out.println("TEST: setStartTime WageCalculatorTest.java\n"
-//                + "startTime has been set to " + this.startTime);
-    }
-
-    void setEndTime(Integer endTime) {
-        endTime = Util.fixTimesAfterMidnight(endTime);
-        this.endTime = endTime;
-//        System.out.println("TEST: setEndTime WageCalculatorTest.java\n"
-//                + "endTime has been set to " + this.endTime);
-    }
-
-    void setBedTime(Integer bedTime) {
-        bedTime = Util.fixTimesAfterMidnight(bedTime);
-        this.bedTime = bedTime;
-//        System.out.println("TEST: setBedTime WageCalculatorTest.java\n"
-//                + "bedTime has been set to " + this.bedTime);
-    }
-
-    Integer getStartTime() {
-        return this.startTime;
-    }
-
-    Integer getEndTime() {
-        return this.endTime;
-    }
-
-    Integer getBedTime() {
-        return this.bedTime;
+    WageCalculator(HoursWorked hoursWorked) {
+        this.hoursWorked = hoursWorked;
     }
 
     Integer getTotalHours() {
-        return (this.endTime - this.startTime);
+        return (this.hoursWorked.getEndTime() - this.hoursWorked.getStartTime());
     }
 
     String getTotalPay() {
@@ -63,14 +27,14 @@ class WageCalculator {
     }
 
     Integer getBaseHours() {
-        if(this.bedTime > this.endTime) {
-            return this.endTime - this.startTime;
-        } else if (this.bedTime < this.startTime) {
+        if(this.hoursWorked.getBedTime() > this.hoursWorked.getEndTime()) {
+            return this.hoursWorked.getEndTime() - this.hoursWorked.getStartTime();
+        } else if (this.hoursWorked.getBedTime() < this.hoursWorked.getStartTime()) {
             return 0;
-        } else if(this.bedTime > 12) {
-            return (12 - this.startTime);
+        } else if(this.hoursWorked.getBedTime() > 12) {
+            return (12 - this.hoursWorked.getStartTime());
         } else {
-            return (this.bedTime - this.startTime);
+            return (this.hoursWorked.getBedTime() - this.hoursWorked.getStartTime());
         }
     }
 
@@ -79,18 +43,20 @@ class WageCalculator {
     }
 
     Integer getDiscountHours() {
-        if((this.bedTime > 12) || ((this.endTime < 12) && (this.bedTime > this.endTime))) {
+        if((this.hoursWorked.getBedTime() > 12)
+                || ((this.hoursWorked.getEndTime() < 12)
+                && (this.hoursWorked.getBedTime() > this.hoursWorked.getEndTime()))) {
             return 0;
-        } else if(this.startTime > this.bedTime){
-            if(12 > this.endTime) {
-                return (this.startTime - this.endTime);
+        } else if(this.hoursWorked.getStartTime() > this.hoursWorked.getBedTime()){
+            if(12 > this.hoursWorked.getEndTime()) {
+                return (this.hoursWorked.getStartTime() - this.hoursWorked.getEndTime());
             } else {
-                return (12 - this.startTime);
+                return (12 - this.hoursWorked.getStartTime());
             }
-        } else if(this.endTime < 12){
-            return (this.endTime - this.bedTime);
+        } else if(this.hoursWorked.getEndTime() < 12){
+            return (this.hoursWorked.getEndTime() - this.hoursWorked.getBedTime());
         } else {
-            return (12 - this.bedTime);
+            return (12 - this.hoursWorked.getBedTime());
         }
     }
 
@@ -99,10 +65,10 @@ class WageCalculator {
     }
 
     Integer getPremiumHours() {
-        if(this.endTime <= 12) {
+        if(this.hoursWorked.getEndTime() <= 12) {
             return 0;
         } else {
-            return (this.endTime - 12);
+            return (this.hoursWorked.getEndTime() - 12);
         }
     }
 
