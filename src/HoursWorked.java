@@ -5,7 +5,7 @@
  * @author Sarah Guarino
  * @version 1.0
  */
-public class HoursWorked {
+class HoursWorked {
     private Integer startTime;
     private Integer endTime;
     private Integer bedTime;

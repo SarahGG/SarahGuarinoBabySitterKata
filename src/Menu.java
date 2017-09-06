@@ -7,7 +7,34 @@ import java.util.Scanner;
  * @version 1.0
  */
 class Menu {
-    static Integer requestTimeFromUser(String prompt) {
+    static HoursWorked getPunchCardTimes() {
+        HoursWorked hoursWorked = new HoursWorked();
+        Integer startTime;
+        Integer endTime;
+        Integer bedTime;
+
+        Menu.printMenuGreeting();
+
+        do {
+            startTime = Menu.requestTimeFromUser("What time did you start?\n>: ");
+            hoursWorked.setStartTime(startTime);
+            endTime = Menu.requestTimeFromUser("What time did you leave?\n>: ");
+            hoursWorked.setEndTime(endTime);
+
+            if(!(Validator.rangeIsInOrder(hoursWorked.getStartTime(), hoursWorked.getEndTime()))) {
+                Menu.incorrectRangeWarning();
+                continue;
+            }
+
+            bedTime = Menu.requestTimeFromUser("What is the child's bed time?\n>: ");
+            hoursWorked.setBedTime(bedTime);
+        }
+        while(!(Validator.rangeIsInOrder(hoursWorked.getStartTime(), hoursWorked.getEndTime())));
+
+        return hoursWorked;
+    }
+
+    private static Integer requestTimeFromUser(String prompt) {
         Scanner scnr = new Scanner(System.in);
         String userInputTime;
 
@@ -23,48 +50,58 @@ class Menu {
         return Integer.parseInt(userInputTime);
     }
 
-    static void incorrectRangeWarning() {
+    private static void incorrectRangeWarning() {
         System.out.println("Warning! Your start time and end time were not in the right order. Please try again.");
     }
 
-    static void printTotalHours(WageCalculator wageCalculator) {
+    static void printPayResults(WageCalculator wageCalculator) {
+        printMenuHeader();
+        printTotalHours(wageCalculator);
+        printBaseHours(wageCalculator);
+        printDiscountHours(wageCalculator);
+        printPremiumHours(wageCalculator);
+        printTotalPay(wageCalculator);
+        printMenuFooter();
+    }
+
+    private static void printTotalHours(WageCalculator wageCalculator) {
         System.out.printf("Total hours worked = %d\n", wageCalculator.getTotalHours());
     }
 
-    static void printTotalPay(WageCalculator wageCalculator) {
+    private static void printTotalPay(WageCalculator wageCalculator) {
         System.out.printf("Total Earned \t\t\t= $%s\n", wageCalculator.getTotalPay());
     }
 
-    static void printBaseHours(WageCalculator wageCalculator) {
+    private static void printBaseHours(WageCalculator wageCalculator) {
         System.out.printf("\t%s/hr * %d hours\t= $%s\n",
                 HourlyRates.getBaseRate().toString(),
                 wageCalculator.getBaseHours(),
                 wageCalculator.getBasePay());
     }
 
-    static void printDiscountHours(WageCalculator wageCalculator) {
+    private static void printDiscountHours(WageCalculator wageCalculator) {
         System.out.printf("\t%s/hr * %d hours\t= $%s\n",
                 HourlyRates.getDiscountRate().toString(),
                 wageCalculator.getDiscountHours(),
                 wageCalculator.getDiscountPay());
     }
 
-    static void printPremiumHours(WageCalculator wageCalculator) {
+    private static void printPremiumHours(WageCalculator wageCalculator) {
         System.out.printf("\t%s/hr * %d hours\t= $%s\n",
                 HourlyRates.getPremiumRate().toString(),
                 wageCalculator.getPremiumHours(),
                 wageCalculator.getPremiumPay());
     }
 
-    static void printMenuGreeting() {
+    private static void printMenuGreeting() {
         System.out.println("** DAILY WAGE CALCULATOR ******");
     }
 
-    static void printMenuHeader() {
+    private static void printMenuHeader() {
         System.out.println("\n** TODAY'S TIME SHEET *********");
     }
 
-    static void printMenuFooter() {
+    private static void printMenuFooter() {
         System.out.println("\n** THANK YOU ******************");
     }
 }
