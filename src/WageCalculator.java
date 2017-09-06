@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
  * @version 1.0
  */
 class WageCalculator {
-    private HoursWorked hoursWorked;
+    private final HoursWorked hoursWorked;
 
     WageCalculator(HoursWorked hoursWorked) {
         this.hoursWorked = hoursWorked;
