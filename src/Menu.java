@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Class description
+ * Interacts with the user, displaying input depending on user response.
  *
  * @author Sarah Guarino
  * @version 1.0

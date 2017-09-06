@@ -11,232 +11,224 @@ import static org.junit.Assert.assertEquals;
  */
 public class WageCalculatorTest {
     private WageCalculator wageCalculator;
+    private HoursWorked hoursWorked;
 
     @Before
     public void setUp() {
-        wageCalculator = new WageCalculator();
-    }
-
-    @Test
-    public void startTimeIsInitializedToZero() {
-        assertEquals("0", wageCalculator.getStartTime().toString());
-    }
-
-    @Test
-    public void endTimeIsInitializedToZero() {
-        assertEquals("0", wageCalculator.getEndTime().toString());
-    }
-
-    @Test
-    public void bedTimeIsInitializedToZero() {
-        assertEquals("0", wageCalculator.getBedTime().toString());
-    }
-
-    @Test
-    public void startTimeIsInitializedToFive() {
-        wageCalculator.setStartTime(5);
-        assertEquals("5", wageCalculator.getStartTime().toString());
-    }
-
-    @Test
-    public void endTimeIsInitializedToFive() {
-        wageCalculator.setEndTime(5);
-        assertEquals("5", wageCalculator.getEndTime().toString());
-    }
-
-    @Test
-    public void bedTimeIsInitializedToFive() {
-        wageCalculator.setBedTime(5);
-        assertEquals("5", wageCalculator.getBedTime().toString());
+        hoursWorked = new HoursWorked();
     }
 
     @Test
     public void workingFiveToMidNightReturnsSeven() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setEndTime(12);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setEndTime(12);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("7", wageCalculator.getTotalHours().toString());
     }
 
     @Test
     public void workingFiveToTwoReturnsNine() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setEndTime(2);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setEndTime(2);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("9", wageCalculator.getTotalHours().toString());
     }
 
     @Test
     public void startTimeAtFivewithBedTimeAtNineReturnsFourBaseHours() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("4", wageCalculator.getBaseHours().toString());
     }
 
     @Test
     public void startTimeAtFivewithEndTimeAtEightAndBedTimeAtNineReturnsThreeBaseHours() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setEndTime(8);
-        wageCalculator.setBedTime(9);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setEndTime(8);
+        hoursWorked.setBedTime(9);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("3", wageCalculator.getBaseHours().toString());
     }
 
     @Test
     public void startTimeAtFivewithBedTimeAtTwoReturnsSevenBaseHours() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setEndTime(4);
-        wageCalculator.setBedTime(2);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setEndTime(4);
+        hoursWorked.setBedTime(2);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("7", wageCalculator.getBaseHours().toString());
     }
 
     @Test
     public void bedTimeAtNineReturnsThreeDisCountHours() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("3", wageCalculator.getDiscountHours().toString());
     }
 
     @Test
     public void bedTimeAtOneReturnsZeroDisCountHours() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(1);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(1);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("0", wageCalculator.getDiscountHours().toString());
     }
 
     @Test
     public void bedTimeAtSevenWithStartTimeAtEightReturnsFourDiscountHours() {
-        wageCalculator.setStartTime(8);
-        wageCalculator.setBedTime(7);
-        wageCalculator.setEndTime(12);
+        hoursWorked.setStartTime(8);
+        hoursWorked.setBedTime(7);
+        hoursWorked.setEndTime(12);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("4", wageCalculator.getDiscountHours().toString());
     }
 
     @Test
     public void bedTimeAtSevenWithEndTimeAtNineReturnsTwoDiscountHours() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(7);
-        wageCalculator.setEndTime(9);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(7);
+        hoursWorked.setEndTime(9);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("2", wageCalculator.getDiscountHours().toString());
     }
 
     @Test
     public void endTimeAtElevenReturnsZeroPremiumHours() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(11);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(11);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("0", wageCalculator.getPremiumHours().toString());
     }
 
     @Test
     public void endTimeAtFourReturnsFourPremiumHours() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("4", wageCalculator.getPremiumHours().toString());
     }
 
     @Test
     public void endTimeAtTwoReturnsTwoPremiumHours() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(2);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(2);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("2", wageCalculator.getPremiumHours().toString());
     }
 
     @Test
     public void fourHoursAtBaseRateReturnsFortyEightDollars() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("48.00", wageCalculator.getBasePay());
     }
 
     @Test
     public void zeroHoursAtBaseRateReturnsZeroDollars() {
-        wageCalculator.setStartTime(9);
-        wageCalculator.setBedTime(7);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(9);
+        hoursWorked.setBedTime(7);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("0.00", wageCalculator.getBasePay());
     }
 
     @Test
     public void sevenHoursAtBaseRateReturnsEightyFourDollars() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(1);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(1);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("84.00", wageCalculator.getBasePay());
     }
 
     @Test
     public void threeHoursAtDiscountRateReturnsTwentyFourDollars() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("24.00", wageCalculator.getDiscountPay());
     }
 
     @Test
     public void sixHoursAtDiscountRateReturnsFortyEightDollars() {
-        wageCalculator.setStartTime(6);
-        wageCalculator.setBedTime(5);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(6);
+        hoursWorked.setBedTime(5);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("48.00", wageCalculator.getDiscountPay());
     }
 
     @Test
     public void zeroHoursAtDiscountRateReturnsZeroDollars() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(2);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(2);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("0.00", wageCalculator.getDiscountPay());
     }
 
     @Test
     public void fourHoursAtPremiumRateReturnsSixtyFourDollars() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("64.00", wageCalculator.getPremiumPay());
     }
 
     @Test
     public void twoHoursAtPremiumRateReturnsThirtyTwoDollars() {
-        wageCalculator.setStartTime(1);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(2);
+        hoursWorked.setStartTime(1);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(2);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("32.00", wageCalculator.getPremiumPay());
     }
 
     @Test
     public void zeroHoursAtPremiumRateReturnsZeroDollars() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(11);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(11);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("0.00", wageCalculator.getPremiumPay());
     }
 
     @Test
     public void workingFiveToFourWithBedTimeAtNineReturnsOneHundredThirtySix() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(9);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(9);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("136.00", wageCalculator.getTotalPay());
     }
 
     @Test
     public void workingFiveToNineWithBedTimeAtTenReturnsFortyEightDollars() {
-        wageCalculator.setStartTime(5);
-        wageCalculator.setBedTime(10);
-        wageCalculator.setEndTime(9);
+        hoursWorked.setStartTime(5);
+        hoursWorked.setBedTime(10);
+        hoursWorked.setEndTime(9);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("48.00", wageCalculator.getTotalPay());
     }
 
     @Test
     public void workingMidNightToFourReturnsSixtyFourDollars() {
-        wageCalculator.setStartTime(12);
-        wageCalculator.setBedTime(1);
-        wageCalculator.setEndTime(4);
+        hoursWorked.setStartTime(12);
+        hoursWorked.setBedTime(1);
+        hoursWorked.setEndTime(4);
+        wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("64.00", wageCalculator.getTotalPay());
     }
 }
