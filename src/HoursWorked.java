@@ -16,6 +16,12 @@ class HoursWorked {
         bedTime = 0;
     }
 
+    void setTimes(Integer startTime, Integer endTime, Integer bedTime) {
+        setStartTime(startTime);
+        setEndTime(endTime);
+        setBedTime(bedTime);
+    }
+
     void setStartTime(Integer startTime) {
         startTime = Util.fixTimesAfterMidnight(startTime);
         this.startTime = startTime;

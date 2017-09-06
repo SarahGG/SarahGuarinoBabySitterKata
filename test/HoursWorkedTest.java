@@ -49,4 +49,13 @@ public class HoursWorkedTest {
         hoursWorked.setBedTime(5);
         assertEquals("5", hoursWorked.getBedTime().toString());
     }
+
+    @Test
+    public void usingSetTimesInitializesAllTimes() {
+        hoursWorked.setTimes(5, 4, 9);
+        assertEquals("5", hoursWorked.getStartTime().toString());
+        //returns 16 because of am/pm shift
+        assertEquals("16", hoursWorked.getEndTime().toString());
+        assertEquals("9", hoursWorked.getBedTime().toString());
+    }
 }
