@@ -20,6 +20,4 @@ class HourlyRates {
     static Double getPremiumRate() {
         return PREMIUMRATE;
     }
-
-
 }
