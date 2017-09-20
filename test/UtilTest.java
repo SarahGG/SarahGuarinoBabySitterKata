@@ -11,11 +11,11 @@ import static org.junit.Assert.assertEquals;
 public class UtilTest {
     @Test
     public void ThreeAMReturnsFifteen() {
-        assertEquals("15", Util.fixTimesAfterMidnight(3).toString());
+        assertEquals("15", TimePeriodOffset.offsetTime(3, 12).toString());
     }
 
     @Test
     public void NinePMReturnsNine() {
-        assertEquals("9", Util.fixTimesAfterMidnight(9).toString());
+        assertEquals("9", TimePeriodOffset.offsetTime(9, 12).toString());
     }
 }
