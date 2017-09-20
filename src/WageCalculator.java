@@ -1,5 +1,3 @@
-import java.text.DecimalFormat;
-
 /**
  * Sarah's daily baby sitting wage calculator.
  * Returns numerical values of the hours worked and the pay earned.
@@ -18,12 +16,12 @@ class WageCalculator {
         return (this.hoursWorked.getEndTime() - this.hoursWorked.getStartTime());
     }
 
-    String getTotalPay() {
-        Double basePay = Double.parseDouble(getBasePay());
-        Double discountPay = Double.parseDouble(getDiscountPay());
-        Double premiumPay = Double.parseDouble(getPremiumPay());
+    Double getTotalPay() {
+        Double basePay = getBasePay();
+        Double discountPay = getDiscountPay();
+        Double premiumPay = getPremiumPay();
 
-        return new DecimalFormat("0.00").format(basePay + discountPay + premiumPay);
+        return basePay + discountPay + premiumPay;
     }
 
     Integer getBaseHours() {
@@ -38,8 +36,8 @@ class WageCalculator {
         }
     }
 
-    String getBasePay() {
-        return new DecimalFormat("0.00").format(getBaseHours() * HourlyRates.getBaseRate());
+    Double getBasePay() {
+        return getBaseHours() * HourlyRates.getBaseRate();
     }
 
     Integer getDiscountHours() {
@@ -60,8 +58,8 @@ class WageCalculator {
         }
     }
 
-    String getDiscountPay() {
-        return new DecimalFormat("0.00").format(getDiscountHours() * HourlyRates.getDiscountRate());
+    Double getDiscountPay() {
+        return getDiscountHours() * HourlyRates.getDiscountRate();
     }
 
     Integer getPremiumHours() {
@@ -72,7 +70,7 @@ class WageCalculator {
         }
     }
 
-    String getPremiumPay() {
-        return new DecimalFormat("0.00").format(getPremiumHours() * HourlyRates.getPremiumRate());
+    Double getPremiumPay() {
+        return getPremiumHours() * HourlyRates.getPremiumRate();
     }
 }
