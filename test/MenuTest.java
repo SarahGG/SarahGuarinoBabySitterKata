@@ -16,7 +16,7 @@ public class MenuTest {
     public void printGreetingMethodReturnsHelloWorld() {
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Menu.printGreeting();
+        Menu.printGreeting("Hello World!");
 
         assertEquals("Hello World!\r\n", outContent.toString());
     }
