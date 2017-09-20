@@ -5,5 +5,7 @@
  * @version 1.0
  */
 class Menu {
-
+    static void printGreeting() {
+        System.out.println("Hello World!");
+    }
 }
