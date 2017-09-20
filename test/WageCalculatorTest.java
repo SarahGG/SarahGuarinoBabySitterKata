@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.text.DecimalFormat;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -12,10 +14,12 @@ import static org.junit.Assert.assertEquals;
 public class WageCalculatorTest {
     private WageCalculator wageCalculator;
     private HoursWorked hoursWorked;
+    private DecimalFormat format;
 
     @Before
     public void setUp() {
         hoursWorked = new HoursWorked();
+        format = new DecimalFormat("0.00");
     }
 
     @Test
@@ -108,83 +112,83 @@ public class WageCalculatorTest {
     public void fourHoursAtBaseRateReturnsFortyEightDollars() {
         hoursWorked.setTimes(5,4,9);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("48.00", wageCalculator.getBasePay());
+        assertEquals("48.00", format.format(wageCalculator.getBasePay()));
     }
 
     @Test
     public void zeroHoursAtBaseRateReturnsZeroDollars() {
         hoursWorked.setTimes(9,4,7);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("0.00", wageCalculator.getBasePay());
+        assertEquals("0.00", format.format(wageCalculator.getBasePay()));
     }
 
     @Test
     public void sevenHoursAtBaseRateReturnsEightyFourDollars() {
         hoursWorked.setTimes(5,4,1);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("84.00", wageCalculator.getBasePay());
+        assertEquals("84.00", format.format(wageCalculator.getBasePay()));
     }
 
     @Test
     public void threeHoursAtDiscountRateReturnsTwentyFourDollars() {
         hoursWorked.setTimes(5,4,9);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("24.00", wageCalculator.getDiscountPay());
+        assertEquals("24.00", format.format(wageCalculator.getDiscountPay()));
     }
 
     @Test
     public void sixHoursAtDiscountRateReturnsFortyEightDollars() {
         hoursWorked.setTimes(6,4,5);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("48.00", wageCalculator.getDiscountPay());
+        assertEquals("48.00", format.format(wageCalculator.getDiscountPay()));
     }
 
     @Test
     public void zeroHoursAtDiscountRateReturnsZeroDollars() {
         hoursWorked.setTimes(5,4,2);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("0.00", wageCalculator.getDiscountPay());
+        assertEquals("0.00", format.format(wageCalculator.getDiscountPay()));
     }
 
     @Test
     public void fourHoursAtPremiumRateReturnsSixtyFourDollars() {
         hoursWorked.setTimes(5,4,9);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("64.00", wageCalculator.getPremiumPay());
+        assertEquals("64.00", format.format(wageCalculator.getPremiumPay()));
     }
 
     @Test
     public void twoHoursAtPremiumRateReturnsThirtyTwoDollars() {
         hoursWorked.setTimes(1,2,9);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("32.00", wageCalculator.getPremiumPay());
+        assertEquals("32.00", format.format(wageCalculator.getPremiumPay()));
     }
 
     @Test
     public void zeroHoursAtPremiumRateReturnsZeroDollars() {
         hoursWorked.setTimes(5,11,9);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("0.00", wageCalculator.getPremiumPay());
+        assertEquals("0.00", format.format(wageCalculator.getPremiumPay()));
     }
 
     @Test
     public void workingFiveToFourWithBedTimeAtNineReturnsOneHundredThirtySix() {
         hoursWorked.setTimes(5,4,9);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("136.00", wageCalculator.getTotalPay());
+        assertEquals("136.00", format.format(wageCalculator.getTotalPay()));
     }
 
     @Test
     public void workingFiveToNineWithBedTimeAtTenReturnsFortyEightDollars() {
         hoursWorked.setTimes(5,9,10);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("48.00", wageCalculator.getTotalPay());
+        assertEquals("48.00", format.format(wageCalculator.getTotalPay()));
     }
 
     @Test
     public void workingMidNightToFourReturnsSixtyFourDollars() {
         hoursWorked.setTimes(12,4,1);
         wageCalculator = new WageCalculator(hoursWorked);
-        assertEquals("64.00", wageCalculator.getTotalPay());
+        assertEquals("64.00", format.format(wageCalculator.getTotalPay()));
     }
 }

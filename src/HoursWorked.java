@@ -25,22 +25,16 @@ class HoursWorked {
     void setStartTime(Integer startTime) {
         startTime = TimePeriodOffset.offsetTime(startTime, 12);
         this.startTime = startTime;
-//        System.out.println("TEST: setStartTime WageCalculatorTest.java\n"
-//                + "startTime has been set to " + this.startTime);
     }
 
     void setEndTime(Integer endTime) {
         endTime = TimePeriodOffset.offsetTime(endTime,12);
         this.endTime = endTime;
-//        System.out.println("TEST: setEndTime WageCalculatorTest.java\n"
-//                + "endTime has been set to " + this.endTime);
     }
 
     void setBedTime(Integer bedTime) {
         bedTime = TimePeriodOffset.offsetTime(bedTime, 12);
         this.bedTime = bedTime;
-//        System.out.println("TEST: setBedTime WageCalculatorTest.java\n"
-//                + "bedTime has been set to " + this.bedTime);
     }
 
     Integer getStartTime() {
