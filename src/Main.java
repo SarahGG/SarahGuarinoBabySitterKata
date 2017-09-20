@@ -6,9 +6,5 @@
  */
 class Main {
     public static void main(String[] args) {
-        HoursWorked hoursWorked = Menu.getPunchCardTimes();
-        WageCalculator wageCalculator = new WageCalculator(hoursWorked);
-
-        Menu.printPayResults(wageCalculator);
     }
 }
