@@ -10,12 +10,14 @@ class WageCalculator {
     private final Integer STARTTIME;
     private final Integer ENDTIME;
     private final Integer BEDTIME;
+    private final Integer PREMIUMTIME;
 
     WageCalculator(HoursWorked hoursWorked) {
         this.HOURSWORKED = hoursWorked;
         this.STARTTIME = this.HOURSWORKED.getStartTime();
         this.ENDTIME = this.HOURSWORKED.getEndTime();
         this.BEDTIME = this.HOURSWORKED.getBedTime();
+        this.PREMIUMTIME = this.HOURSWORKED.getPremiumTime();
     }
 
     Integer getTotalHours() {
@@ -35,8 +37,8 @@ class WageCalculator {
             return this.ENDTIME - this.STARTTIME;
         } else if (this.BEDTIME < this.STARTTIME) {
             return 0;
-        } else if(this.BEDTIME > 12) {
-            return (12 - this.STARTTIME);
+        } else if(this.BEDTIME > this.PREMIUMTIME) {
+            return (this.PREMIUMTIME - this.STARTTIME);
         } else {
             return (this.BEDTIME - this.STARTTIME);
         }
@@ -47,18 +49,18 @@ class WageCalculator {
     }
 
     Integer getDiscountHours() {
-        if((this.BEDTIME > 12) || (this.BEDTIME > this.ENDTIME)) {
+        if((this.BEDTIME > this.PREMIUMTIME) || (this.BEDTIME > this.ENDTIME)) {
             return 0;
         } else if(this.STARTTIME > this.BEDTIME){
-            if(12 > this.ENDTIME) {
+            if(this.PREMIUMTIME > this.ENDTIME) {
                 return (this.STARTTIME - this.ENDTIME);
             } else {
-                return (12 - this.STARTTIME);
+                return (this.PREMIUMTIME - this.STARTTIME);
             }
-        } else if(this.ENDTIME < 12){
+        } else if(this.ENDTIME < this.PREMIUMTIME){
             return (this.ENDTIME - this.BEDTIME);
         } else {
-            return (12 - this.BEDTIME);
+            return (this.PREMIUMTIME - this.BEDTIME);
         }
     }
 
@@ -67,7 +69,7 @@ class WageCalculator {
     }
 
     Integer getPremiumHours() {
-        return (this.ENDTIME <= 12) ? 0 : (this.ENDTIME - 12);
+        return (this.ENDTIME <= this.PREMIUMTIME) ? 0 : (this.ENDTIME - this.PREMIUMTIME);
     }
 
     Double getPremiumPay() {

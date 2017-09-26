@@ -9,18 +9,20 @@ class HoursWorked {
     private Integer startTime;
     private Integer endTime;
     private Integer bedTime;
-    
+    private Integer premiumTime;
 
     HoursWorked() {
         startTime = 0;
         endTime = 0;
         bedTime = 0;
+        premiumTime = 0;
     }
 
-    void setTimes(Integer startTime, Integer endTime, Integer bedTime) {
+    void setTimes(Integer startTime, Integer endTime, Integer bedTime, Integer premiumTime) {
         setStartTime(startTime);
         setEndTime(endTime);
         setBedTime(bedTime);
+        setPremiumTime(premiumTime);
     }
 
     void setStartTime(Integer startTime) {
@@ -38,6 +40,11 @@ class HoursWorked {
         this.bedTime = bedTime;
     }
 
+    void setPremiumTime(Integer premiumTime) {
+        premiumTime = TimePeriodOffset.offsetTime(premiumTime, 12);
+        this.premiumTime = premiumTime;
+    }
+
     Integer getStartTime() {
         return this.startTime;
     }
@@ -48,5 +55,8 @@ class HoursWorked {
 
     Integer getBedTime() {
         return this.bedTime;
+    }
+
+    Integer getPremiumTime() {
     }
 }
