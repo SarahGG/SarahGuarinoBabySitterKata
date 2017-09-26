@@ -63,11 +63,7 @@ class WageCalculator {
     }
 
     Integer getPremiumHours() {
-        if(this.hoursWorked.getEndTime() <= 12) {
-            return 0;
-        } else {
-            return (this.hoursWorked.getEndTime() - 12);
-        }
+        return (this.hoursWorked.getEndTime() <= 12) ? 0 : (this.hoursWorked.getEndTime() - 12);
     }
 
     Double getPremiumPay() {
