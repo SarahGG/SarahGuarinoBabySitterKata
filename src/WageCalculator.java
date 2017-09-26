@@ -13,9 +13,13 @@ class WageCalculator {
 
     WageCalculator(HoursWorked hoursWorked) {
         this.HOURSWORKED = hoursWorked;
+        this.STARTTIME = this.HOURSWORKED.getStartTime();
+        this.ENDTIME = this.HOURSWORKED.getEndTime();
+        this.BEDTIME = this.HOURSWORKED.getBedTime();
     }
 
     Integer getTotalHours() {
+        return (this.ENDTIME - this.HOURSWORKED.getStartTime());
     }
 
     Double getTotalPay() {
@@ -27,6 +31,8 @@ class WageCalculator {
     }
 
     Integer getBaseHours() {
+        if(this.HOURSWORKED.getBedTime() > this.ENDTIME) {
+            return this.ENDTIME - this.HOURSWORKED.getStartTime();
         } else if (this.HOURSWORKED.getBedTime() < this.HOURSWORKED.getStartTime()) {
             return 0;
         } else if(this.HOURSWORKED.getBedTime() > 12) {
@@ -42,11 +48,17 @@ class WageCalculator {
 
     Integer getDiscountHours() {
         if((this.HOURSWORKED.getBedTime() > 12)
+                || ((this.ENDTIME < 12)
+                && (this.HOURSWORKED.getBedTime() > this.ENDTIME))) {
             return 0;
         } else if(this.HOURSWORKED.getStartTime() > this.HOURSWORKED.getBedTime()){
+            if(12 > this.ENDTIME) {
+                return (this.HOURSWORKED.getStartTime() - this.ENDTIME);
             } else {
                 return (12 - this.HOURSWORKED.getStartTime());
             }
+        } else if(this.ENDTIME < 12){
+            return (this.ENDTIME - this.HOURSWORKED.getBedTime());
         } else {
             return (12 - this.HOURSWORKED.getBedTime());
         }
@@ -57,6 +69,7 @@ class WageCalculator {
     }
 
     Integer getPremiumHours() {
+        return (this.ENDTIME <= 12) ? 0 : (this.ENDTIME - 12);
     }
 
     Double getPremiumPay() {
