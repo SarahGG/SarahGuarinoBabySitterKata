@@ -19,7 +19,7 @@ class WageCalculator {
     }
 
     Integer getTotalHours() {
-        return (this.ENDTIME - this.HOURSWORKED.getStartTime());
+        return (this.ENDTIME - this.STARTTIME);
     }
 
     Double getTotalPay() {
@@ -31,14 +31,14 @@ class WageCalculator {
     }
 
     Integer getBaseHours() {
-        if(this.HOURSWORKED.getBedTime() > this.ENDTIME) {
-            return this.ENDTIME - this.HOURSWORKED.getStartTime();
-        } else if (this.HOURSWORKED.getBedTime() < this.HOURSWORKED.getStartTime()) {
+        if(this.BEDTIME > this.ENDTIME) {
+            return this.ENDTIME - this.STARTTIME;
+        } else if (this.BEDTIME < this.STARTTIME) {
             return 0;
-        } else if(this.HOURSWORKED.getBedTime() > 12) {
-            return (12 - this.HOURSWORKED.getStartTime());
+        } else if(this.BEDTIME > 12) {
+            return (12 - this.STARTTIME);
         } else {
-            return (this.HOURSWORKED.getBedTime() - this.HOURSWORKED.getStartTime());
+            return (this.BEDTIME - this.STARTTIME);
         }
     }
 
@@ -47,20 +47,20 @@ class WageCalculator {
     }
 
     Integer getDiscountHours() {
-        if((this.HOURSWORKED.getBedTime() > 12)
+        if((this.BEDTIME > 12)
                 || ((this.ENDTIME < 12)
-                && (this.HOURSWORKED.getBedTime() > this.ENDTIME))) {
+                && (this.BEDTIME > this.ENDTIME))) {
             return 0;
-        } else if(this.HOURSWORKED.getStartTime() > this.HOURSWORKED.getBedTime()){
+        } else if(this.STARTTIME > this.BEDTIME){
             if(12 > this.ENDTIME) {
-                return (this.HOURSWORKED.getStartTime() - this.ENDTIME);
+                return (this.STARTTIME - this.ENDTIME);
             } else {
-                return (12 - this.HOURSWORKED.getStartTime());
+                return (12 - this.STARTTIME);
             }
         } else if(this.ENDTIME < 12){
-            return (this.ENDTIME - this.HOURSWORKED.getBedTime());
+            return (this.ENDTIME - this.BEDTIME);
         } else {
-            return (12 - this.HOURSWORKED.getBedTime());
+            return (12 - this.BEDTIME);
         }
     }
 
