@@ -9,6 +9,7 @@ class HoursWorked {
     private Integer startTime;
     private Integer endTime;
     private Integer bedTime;
+    
 
     HoursWorked() {
         startTime = 0;

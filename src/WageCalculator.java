@@ -47,9 +47,7 @@ class WageCalculator {
     }
 
     Integer getDiscountHours() {
-        if((this.BEDTIME > 12)
-                || ((this.ENDTIME < 12)
-                && (this.BEDTIME > this.ENDTIME))) {
+        if((this.BEDTIME > 12) || (this.BEDTIME > this.ENDTIME)) {
             return 0;
         } else if(this.STARTTIME > this.BEDTIME){
             if(12 > this.ENDTIME) {
