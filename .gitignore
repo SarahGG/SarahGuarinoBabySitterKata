@@ -19,3 +19,9 @@ target/
 
 #hibernate
 hibernate.cfg.xml
+.gitignore
+.idea/inspectionProfiles/
+src/REDACTEDMain.java
+src/REDACTEDMenu.java
+*.class
+.idea/workspace.xml
