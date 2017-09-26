@@ -193,6 +193,7 @@ public class WageCalculatorTest {
     }
 
     @Test
+    public void WorkingFiveToFourWithBedTimeAtNineAndPremiumTimeAtElevenReturnsOneHundredFortyFourDollars() {
         hoursWorked.setTimes(5,4,9, 11);
         wageCalculator = new WageCalculator(hoursWorked);
         assertEquals("144.00", format.format(wageCalculator.getTotalPay()));

@@ -58,5 +58,6 @@ class HoursWorked {
     }
 
     Integer getPremiumTime() {
+        return this.premiumTime;
     }
 }
