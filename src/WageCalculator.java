@@ -33,15 +33,19 @@ class WageCalculator {
     }
 
     Integer getBaseHours() {
+        Integer baseHours;
+
         if(this.BEDTIME > this.ENDTIME) {
-            return this.ENDTIME - this.STARTTIME;
+            baseHours = (this.ENDTIME - this.STARTTIME);
         } else if (this.BEDTIME < this.STARTTIME) {
-            return 0;
+            baseHours = 0;
         } else if(this.BEDTIME > this.PREMIUMTIME) {
-            return (this.PREMIUMTIME - this.STARTTIME);
+            baseHours = (this.PREMIUMTIME - this.STARTTIME);
         } else {
-            return (this.BEDTIME - this.STARTTIME);
+            baseHours = (this.BEDTIME - this.STARTTIME);
         }
+
+        return baseHours;
     }
 
     Double getBasePay() {
