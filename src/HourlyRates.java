@@ -5,19 +5,19 @@
  * @version 1.0
  */
 class HourlyRates {
-    final private static Double BASERATE = 12.00;
-    final private static Double DISCOUNTRATE = 8.00;
-    final private static Double PREMIUMRATE = 16.00;
+    final public static Double BASERATE = 12.00;
+    final public static Double DISCOUNTRATE = 8.00;
+    final public static Double PREMIUMRATE = 16.00;
 
-    static Double getBaseRate() {
+    public static Double getBaseRate() {
         return BASERATE;
     }
 
-    static Double getDiscountRate() {
+    public static Double getDiscountRate() {
         return DISCOUNTRATE;
     }
 
-    static Double getPremiumRate() {
+    public static Double getPremiumRate() {
         return PREMIUMRATE;
     }
 }
