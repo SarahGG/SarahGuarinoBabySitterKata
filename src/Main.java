@@ -4,7 +4,8 @@
  * @author Sarah Guarino
  * @version 1.0
  */
-class Main {
+@SuppressWarnings("WeakerAccess")
+public class Main {
     public static void main(String[] args) {
         Menu.printGreeting("** DAILY WAGE CALCULATOR ******");
     }

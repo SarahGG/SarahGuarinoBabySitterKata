@@ -5,8 +5,8 @@
  * @author Sarah Guarino
  * @version 1.0
  */
-class WageCalculator {
-    private final HoursWorked HOURSWORKED;
+@SuppressWarnings("WeakerAccess")
+public class WageCalculator {
     private final Integer STARTTIME;
     private final Integer ENDTIME;
     private final Integer BEDTIME;
@@ -20,11 +20,11 @@ class WageCalculator {
         this.PREMIUMTIME = this.HOURSWORKED.getPremiumTime();
     }
 
-    Integer getTotalHours() {
+    public Integer getTotalHours() {
         return (this.ENDTIME - this.STARTTIME);
     }
 
-    Double getTotalPay() {
+    public Double getTotalPay() {
         Double basePay = getBasePay();
         Double discountPay = getDiscountPay();
         Double premiumPay = getPremiumPay();
@@ -32,7 +32,7 @@ class WageCalculator {
         return basePay + discountPay + premiumPay;
     }
 
-    Integer getBaseHours() {
+    public Integer getBaseHours() {
         Integer baseHours;
 
         if(this.BEDTIME > this.ENDTIME) {
@@ -48,11 +48,11 @@ class WageCalculator {
         return baseHours;
     }
 
-    Double getBasePay() {
+    public Double getBasePay() {
         return getBaseHours() * HourlyRates.getBaseRate();
     }
 
-    Integer getDiscountHours() {
+    public Integer getDiscountHours() {
         if((this.BEDTIME > this.PREMIUMTIME) || (this.BEDTIME > this.ENDTIME)) {
             return 0;
         } else if(this.STARTTIME > this.BEDTIME){
@@ -68,15 +68,15 @@ class WageCalculator {
         }
     }
 
-    Double getDiscountPay() {
+    public Double getDiscountPay() {
         return getDiscountHours() * HourlyRates.getDiscountRate();
     }
 
-    Integer getPremiumHours() {
+    public Integer getPremiumHours() {
         return (this.ENDTIME <= this.PREMIUMTIME) ? 0 : (this.ENDTIME - this.PREMIUMTIME);
     }
 
-    Double getPremiumPay() {
+    public Double getPremiumPay() {
         return getPremiumHours() * HourlyRates.getPremiumRate();
     }
 }

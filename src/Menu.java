@@ -4,8 +4,9 @@
  * @author Sarah Guarino
  * @version 1.0
  */
-class Menu {
-    static void printGreeting(String prompt) {
+@SuppressWarnings("WeakerAccess")
+public class Menu {
+    public static void printGreeting(String prompt) {
         System.out.println(prompt);
     }
 }

@@ -5,59 +5,60 @@
  * @author Sarah Guarino
  * @version 1.0
  */
-class HoursWorked {
+@SuppressWarnings("WeakerAccess")
+public class HoursWorked {
     private Integer startTime;
     private Integer endTime;
     private Integer bedTime;
     private Integer premiumTime;
 
-    HoursWorked() {
+    private HoursWorked() {
         startTime = 0;
         endTime = 0;
         bedTime = 0;
         premiumTime = 0;
     }
 
-    void setTimes(Integer startTime, Integer endTime, Integer bedTime, Integer premiumTime) {
+    public void setTimes(Integer startTime, Integer endTime, Integer bedTime, Integer premiumTime) {
         setStartTime(startTime);
         setEndTime(endTime);
         setBedTime(bedTime);
         setPremiumTime(premiumTime);
     }
 
-    void setStartTime(Integer startTime) {
+    public void setStartTime(Integer startTime) {
         startTime = TimePeriodOffset.offsetTime(startTime, 12);
         this.startTime = startTime;
     }
 
-    void setEndTime(Integer endTime) {
+    public void setEndTime(Integer endTime) {
         endTime = TimePeriodOffset.offsetTime(endTime,12);
         this.endTime = endTime;
     }
 
-    void setBedTime(Integer bedTime) {
+    public void setBedTime(Integer bedTime) {
         bedTime = TimePeriodOffset.offsetTime(bedTime, 12);
         this.bedTime = bedTime;
     }
 
-    void setPremiumTime(Integer premiumTime) {
+    private void setPremiumTime(Integer premiumTime) {
         premiumTime = TimePeriodOffset.offsetTime(premiumTime, 12);
         this.premiumTime = premiumTime;
     }
 
-    Integer getStartTime() {
+    public Integer getStartTime() {
         return this.startTime;
     }
 
-    Integer getEndTime() {
+    public Integer getEndTime() {
         return this.endTime;
     }
 
-    Integer getBedTime() {
+    public Integer getBedTime() {
         return this.bedTime;
     }
 
-    Integer getPremiumTime() {
+    public Integer getPremiumTime() {
         return this.premiumTime;
     }
 }

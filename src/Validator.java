@@ -4,8 +4,9 @@
  * @author Sarah Guarino
  * @version 1.0
  */
-class Validator {
-    static boolean isWholeNumber(String inputToEvaluate) {
+@SuppressWarnings("WeakerAccess")
+public class Validator {
+    public static boolean isWholeNumber(String inputToEvaluate) {
         try {
             //noinspection ResultOfMethodCallIgnored
             Integer.parseInt(inputToEvaluate);
@@ -15,11 +16,11 @@ class Validator {
         }
     }
 
-    static boolean isWithinTimeRange(Integer inputToEvaluate) {
+    public static boolean isWithinTimeRange(Integer inputToEvaluate) {
         return((1 <= inputToEvaluate) && (inputToEvaluate <= 12));
     }
 
-    static boolean rangeIsInOrder(Integer startTime, Integer endTime) {
+    public static boolean rangeIsInOrder(Integer startTime, Integer endTime) {
         return ((endTime - startTime) >= 0);
     }
 }
