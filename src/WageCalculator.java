@@ -12,12 +12,11 @@ public class WageCalculator {
     private final Integer BEDTIME;
     private final Integer PREMIUMTIME;
 
-    WageCalculator(HoursWorked hoursWorked) {
-        this.HOURSWORKED = hoursWorked;
-        this.STARTTIME = this.HOURSWORKED.getStartTime();
-        this.ENDTIME = this.HOURSWORKED.getEndTime();
-        this.BEDTIME = this.HOURSWORKED.getBedTime();
-        this.PREMIUMTIME = this.HOURSWORKED.getPremiumTime();
+    private WageCalculator(HoursWorked HOURSWORKED) {
+        this.STARTTIME = HOURSWORKED.getStartTime();
+        this.ENDTIME = HOURSWORKED.getEndTime();
+        this.BEDTIME = HOURSWORKED.getBedTime();
+        this.PREMIUMTIME = HOURSWORKED.getPremiumTime();
     }
 
     public Integer getTotalHours() {
