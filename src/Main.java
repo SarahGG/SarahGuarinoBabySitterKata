@@ -7,6 +7,8 @@
 @SuppressWarnings("WeakerAccess")
 public class Main {
     public static void main(String[] args) {
-        Menu.printGreeting("** DAILY WAGE CALCULATOR ******");
+        Menu.printMessage("** DAILY WAGE CALCULATOR ******");
+        Menu.printMessage("** TODAY'S WAGE RESULTS ******");
+        Menu.printMessage("** HAVE A GREAT DAY ******");
     }
 }
