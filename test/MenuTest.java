@@ -3,7 +3,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static junit.framework.TestCase.assertEquals;
 
 /**
  * Test class for Menu class of sarah's babysitting wage calculator.
@@ -16,7 +16,7 @@ public class MenuTest {
     public void printGreetingMethodReturnsHelloWorld() {
         final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        Menu.printGreeting("Hello World!");
+        Menu.printMessage("Hello World!");
 
         assertEquals("Hello World!\r\n", outContent.toString());
     }

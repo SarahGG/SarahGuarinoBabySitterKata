@@ -6,7 +6,7 @@
  */
 @SuppressWarnings("WeakerAccess")
 public class Menu {
-    public static void printGreeting(String prompt) {
+    public static void printMessage(String prompt) {
         System.out.println(prompt);
     }
 }
